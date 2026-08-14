@@ -1,0 +1,18 @@
+# OS
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# 편집기
+.vscode/
+.idea/
+*.swp
+
+# 임시 파일
+*.tmp
+*.bak
+*~
+
+# 작업용 폴더 (공개 전 자료, 초안 등)
+_work/
+_draft/
