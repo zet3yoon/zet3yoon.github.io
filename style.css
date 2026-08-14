@@ -1,0 +1,481 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css');
+
+/* ===================================================================
+   1. 디자인 토큰
+   색상, 간격, 글자 크기를 여기서 한 번만 정의하고 아래에서 갖다 씁니다.
+   나중에 색을 바꾸고 싶으면 이 블록만 고치면 전체에 반영됩니다.
+   =================================================================== */
+
+:root {
+  --bg:            #fbfaf8;
+  --bg-elevated:   #ffffff;
+  --text:          #1a1a18;
+  --text-muted:    #6b6a65;
+  --text-subtle:   #93918a;
+  --accent:        #1f6b4d;
+  --accent-soft:   #e8f0ec;
+  --border:        #e5e2dc;
+  --border-strong: #d3cfc7;
+
+  --max-width:  860px;
+  --radius:     10px;
+
+  --step--1: 0.875rem;
+  --step-0:  1rem;
+  --step-1:  1.125rem;
+  --step-2:  1.375rem;
+  --step-3:  1.75rem;
+  --step-4:  2.5rem;
+
+  --font: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont,
+          'Segoe UI', 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:            #14140f;
+    --bg-elevated:   #1c1c18;
+    --text:          #ecebe6;
+    --text-muted:    #a4a29a;
+    --text-subtle:   #7b7972;
+    --accent:        #6fc79e;
+    --accent-soft:   #1d2b25;
+    --border:        #2e2e28;
+    --border-strong: #43423a;
+  }
+}
+
+/* ===================================================================
+   2. 기본 재설정
+   =================================================================== */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: var(--step-0);
+  line-height: 1.75;
+  letter-spacing: -0.01em;
+  word-break: keep-all;      /* 한글이 단어 중간에서 잘리지 않게 */
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img { max-width: 100%; height: auto; }
+
+/* ===================================================================
+   3. 레이아웃
+   =================================================================== */
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 72px 0;
+  border-top: 1px solid var(--border);
+}
+
+.section:first-of-type { border-top: none; }
+
+.section__title {
+  font-size: var(--step-3);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin: 0 0 8px;
+}
+
+.section__lead {
+  color: var(--text-muted);
+  margin: 0 0 40px;
+}
+
+/* ===================================================================
+   4. 헤더 / 네비게이션
+   =================================================================== */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.nav__name {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.nav__links {
+  display: flex;
+  gap: 20px;
+  font-size: var(--step--1);
+  color: var(--text-muted);
+}
+
+.nav__links a:hover { color: var(--accent); }
+
+@media (max-width: 620px) {
+  .nav__links { display: none; }
+}
+
+/* ===================================================================
+   5. 히어로
+   =================================================================== */
+
+.hero {
+  padding: 96px 0 72px;
+}
+
+.hero__eyebrow {
+  display: inline-block;
+  font-size: var(--step--1);
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 24px;
+}
+
+.hero__title {
+  font-size: var(--step-4);
+  font-weight: 800;
+  line-height: 1.35;
+  letter-spacing: -0.04em;
+  margin: 0 0 20px;
+}
+
+.hero__body {
+  font-size: var(--step-1);
+  color: var(--text-muted);
+  max-width: 62ch;
+  margin: 0 0 32px;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  font-size: var(--step--1);
+  font-weight: 600;
+  transition: background .15s ease, border-color .15s ease, color .15s ease;
+}
+
+.btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.btn--primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.btn--primary:hover {
+  color: #fff;
+  opacity: .88;
+}
+
+/* ===================================================================
+   6. 프로필 (2단 구성)
+   =================================================================== */
+
+.profile {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 48px;
+}
+
+@media (max-width: 720px) {
+  .profile { grid-template-columns: 1fr; gap: 40px; }
+}
+
+.block + .block { margin-top: 32px; }
+
+.block__label {
+  font-size: var(--step--1);
+  font-weight: 700;
+  color: var(--text-subtle);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0 0 14px;
+}
+
+.job + .job { margin-top: 28px; }
+
+.job__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.job__org { font-weight: 700; }
+
+.job__period {
+  font-size: var(--step--1);
+  color: var(--text-subtle);
+  font-variant-numeric: tabular-nums;
+}
+
+.job__group { margin-top: 12px; }
+
+.job__groupname {
+  font-size: var(--step--1);
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list li {
+  position: relative;
+  padding-left: 14px;
+  color: var(--text-muted);
+  font-size: var(--step--1);
+}
+
+.list li::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 0.85em;
+  width: 4px;
+  height: 1px;
+  background: var(--border-strong);
+}
+
+.fact + .fact { margin-top: 14px; }
+
+.fact__name { font-weight: 600; font-size: var(--step--1); }
+
+.fact__meta {
+  font-size: var(--step--1);
+  color: var(--text-subtle);
+  line-height: 1.6;
+}
+
+/* ===================================================================
+   7. 프로젝트 카드
+   =================================================================== */
+
+.projects__group + .projects__group { margin-top: 40px; }
+
+.projects__org {
+  font-size: var(--step--1);
+  font-weight: 700;
+  color: var(--text-subtle);
+  letter-spacing: 0.04em;
+  margin: 0 0 16px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+@media (max-width: 720px) {
+  .cards { grid-template-columns: 1fr; }
+}
+
+.card {
+  display: block;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+  transition: border-color .15s ease, transform .15s ease;
+}
+
+.card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.card__title {
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  margin: 0 0 8px;
+}
+
+.card__desc {
+  font-size: var(--step--1);
+  color: var(--text-muted);
+  margin: 0 0 14px;
+}
+
+.card__metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 3px 9px;
+  border-radius: 6px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ===================================================================
+   8. 본문 서술 (About / How I Work)
+   =================================================================== */
+
+.prose h3 {
+  font-size: var(--step-2);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.5;
+  margin: 44px 0 12px;
+}
+
+.prose h3:first-child { margin-top: 0; }
+
+.prose p {
+  margin: 0 0 16px;
+  color: var(--text-muted);
+}
+
+.prose strong { color: var(--text); font-weight: 600; }
+
+.quote {
+  border-left: 2px solid var(--accent);
+  padding: 4px 0 4px 20px;
+  margin: 20px 0;
+  color: var(--text-muted);
+}
+
+.quote cite {
+  display: block;
+  margin-top: 8px;
+  font-size: var(--step--1);
+  font-style: normal;
+  color: var(--text-subtle);
+}
+
+/* ===================================================================
+   9. 사이드 프로젝트 강조 박스
+   =================================================================== */
+
+.highlight {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  margin: 32px 0;
+}
+
+.highlight__head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.highlight__title {
+  font-size: var(--step-1);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.highlight__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 16px;
+}
+
+/* ===================================================================
+   10. 연락처 / 푸터
+   =================================================================== */
+
+.contact__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 0 48px;
+  font-size: var(--step--1);
+  color: var(--text-subtle);
+}
+
+/* ===================================================================
+   11. 인쇄 (PDF 저장용)
+   지원 시 PDF를 요구하는 경우가 많아 인쇄 스타일을 따로 둡니다.
+   =================================================================== */
+
+@media print {
+  :root {
+    --bg: #fff;
+    --bg-elevated: #fff;
+    --text: #000;
+    --text-muted: #333;
+    --text-subtle: #666;
+    --border: #ccc;
+  }
+
+  .nav, .hero__actions, .contact__links { display: none; }
+
+  .section { padding: 24px 0; page-break-inside: avoid; }
+
+  .card { break-inside: avoid; }
+
+  a[href^="http"]::after {
+    content: ' (' attr(href) ')';
+    font-size: 0.75rem;
+    color: #666;
+  }
+}
