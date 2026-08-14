@@ -6,6 +6,9 @@
 <title>오승윤 · Product Manager</title>
 <meta name="description" content="따뜻하고 일 잘하는 사람, 오승윤입니다. 멤버십·리워드·구독 커머스 서비스를 기획하고 운영합니다.">
 <link rel="stylesheet" href="style.css">
+<!-- 자바스크립트가 켜져 있을 때만 모션용 숨김 상태를 적용합니다.
+     꺼져 있으면 내용이 처음부터 그대로 보입니다. -->
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
@@ -47,6 +50,28 @@
 </header>
 
 <!-- ==========================================================
+     성과 지표
+     숫자는 화면에 들어올 때 0부터 세며 올라갑니다.
+     ========================================================== -->
+<div class="wrap">
+  <div class="metrics" data-reveal="stagger">
+    <div>
+      <span class="metric__value" data-count="140000" data-suffix="장">140,000장</span>
+      <span class="metric__label">외국인 전용 멤버십 카드 누적 발급</span>
+    </div>
+    <div>
+      <span class="metric__value" data-count="520" data-suffix="억 원">520억 원</span>
+      <span class="metric__label">카드로 식별한 외국인 매출</span>
+    </div>
+    <div>
+      <span class="metric__value" data-count="3" data-suffix="배">3배</span>
+      <span class="metric__label">회원 객단가 (마트, 비회원 대비)</span>
+    </div>
+  </div>
+  <p class="metrics__note">외국인 전용 멤버십 카드 서비스 · 2026.06 기준</p>
+</div>
+
+<!-- ==========================================================
      Profile
      ========================================================== -->
 <section class="section" id="profile">
@@ -54,7 +79,7 @@
     <h2 class="section__title">Profile</h2>
     <p class="section__lead">경력과 배경입니다.</p>
 
-    <div class="profile">
+    <div class="profile" data-reveal>
 
       <!-- 왼쪽: 경력 -->
       <div>
@@ -212,7 +237,7 @@
 
     <div class="projects__group">
       <p class="projects__org">롯데멤버스</p>
-      <div class="cards">
+      <div class="cards" data-reveal="stagger">
 
         <a class="card" href="projects/foreign-membership-card.html">
           <p class="card__title">외국인 전용 멤버십 카드 서비스 구축 및 고도화</p>
@@ -267,7 +292,7 @@
 
     <div class="projects__group">
       <p class="projects__org">하우빌드</p>
-      <div class="cards">
+      <div class="cards" data-reveal="stagger">
 
         <a class="card" href="projects/sketch-regulation.html">
           <p class="card__title">자동 법규 검토 · 기획설계 서비스 ‘스케치’ 구축</p>
@@ -371,7 +396,7 @@
         너무 재밌으니까요.
       </p>
 
-      <div class="highlight">
+      <div class="highlight" data-reveal>
         <div class="highlight__head">
           <span class="highlight__title">gritrail</span>
           <span class="fact__meta">트레일러닝 정보 채널 · 2024.06 – 현재</span>
@@ -460,6 +485,8 @@
 </section>
 
 </main>
+
+<script src="motion.js"></script>
 
 <footer class="footer">
   <div class="wrap">© 2026 오승윤</div>

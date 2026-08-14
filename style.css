@@ -453,7 +453,115 @@ img { max-width: 100%; height: auto; }
 }
 
 /* ===================================================================
-   11. 인쇄 (PDF 저장용)
+   11. 성과 지표 (숫자 카운트업)
+   =================================================================== */
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  padding: 32px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+@media (max-width: 620px) {
+  .metrics { grid-template-columns: 1fr; gap: 22px; }
+}
+
+.metric__value {
+  display: block;
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.045em;
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 4px;
+}
+
+.metric__label {
+  font-size: var(--step--1);
+  color: var(--text-muted);
+}
+
+.metrics__note {
+  margin-top: 14px;
+  font-size: 0.8125rem;
+  color: var(--text-subtle);
+}
+
+/* ===================================================================
+   12. 모션
+   자바스크립트가 켜져 있을 때만 숨김 상태를 적용합니다.
+   꺼져 있으면 처음부터 그냥 보입니다.
+   =================================================================== */
+
+.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity   .7s cubic-bezier(.22, .68, .3, 1),
+    transform .7s cubic-bezier(.22, .68, .3, 1);
+}
+
+.js [data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* stagger 모드에서는 컨테이너가 아니라 자식이 순서대로 나타납니다. */
+.js [data-reveal="stagger"] {
+  opacity: 1;
+  transform: none;
+}
+
+.js [data-reveal="stagger"] > * {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity   .6s cubic-bezier(.22, .68, .3, 1),
+    transform .6s cubic-bezier(.22, .68, .3, 1);
+}
+
+.js [data-reveal="stagger"] > *.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* 첫 화면은 스크롤을 기다리지 않고 로드 직후 나타납니다. */
+.js .hero > .wrap > * {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: rise .8s cubic-bezier(.22, .68, .3, 1) forwards;
+}
+
+.js .hero__eyebrow { animation-delay: .05s; }
+.js .hero__title   { animation-delay: .15s; }
+.js .hero__body    { animation-delay: .28s; }
+.js .hero__actions { animation-delay: .40s; }
+
+@keyframes rise {
+  to { opacity: 1; transform: none; }
+}
+
+/* 동작 줄이기 설정을 켠 사용자에게는 애니메이션을 걷어냅니다. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  .js [data-reveal],
+  .js [data-reveal="stagger"] > *,
+  .js .hero > .wrap > * {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .card:hover { transform: none; }
+}
+
+/* ===================================================================
+   13. 인쇄 (PDF 저장용)
    지원 시 PDF를 요구하는 경우가 많아 인쇄 스타일을 따로 둡니다.
    =================================================================== */
 
