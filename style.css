@@ -6,26 +6,33 @@
    나중에 색을 바꾸고 싶으면 이 블록만 고치면 전체에 반영됩니다.
    =================================================================== */
 
-:root {
-  --bg:            #fbfaf8;
-  --bg-elevated:   #ffffff;
-  --text:          #1a1a18;
-  --text-muted:    #6b6a65;
-  --text-subtle:   #93918a;
-  --accent:        #1f6b4d;
-  --accent-soft:   #e8f0ec;
-  --border:        #e5e2dc;
-  --border-strong: #d3cfc7;
+/* 색상은 kurzgesagt.org에서 실측한 값을 기준으로 잡았습니다.
+   본문은 순검정이 아니라 딥네이비(#0A1439)입니다. 흰 배경에서 덜 딱딱합니다.
+   액센트는 파랑을 기본으로 두고, 초록은 성과 수치에만 씁니다. */
 
-  --max-width:  860px;
-  --radius:     10px;
+:root {
+  --bg:            #ffffff;
+  --bg-elevated:   #f7f8fc;
+  --text:          #0a1439;
+  --text-muted:    #55608a;
+  --text-subtle:   #6a7495;   /* 흰 배경 대비 4.62:1 — WCAG AA 통과 */
+  --accent:        #0c46da;
+  --accent-soft:   #e7edfd;
+  --on-accent:     #ffffff;   /* 액센트 배경 위 글자색. 다크에서는 뒤집습니다 */
+  --success:       #1d6e31;   /* 연초록 배지 배경 대비 5.59:1 — WCAG AA 통과 */
+  --success-soft:  #e6f5e9;
+  --border:        #e3e6f0;
+  --border-strong: #c8cdde;
+
+  --max-width:  880px;
+  --radius:     12px;
 
   --step--1: 0.875rem;
-  --step-0:  1rem;
-  --step-1:  1.125rem;
-  --step-2:  1.375rem;
-  --step-3:  1.75rem;
-  --step-4:  2.5rem;
+  --step-0:  1.0625rem;
+  --step-1:  1.1875rem;
+  --step-2:  1.5rem;
+  --step-3:  clamp(1.875rem, 1.2rem + 2.4vw, 2.75rem);
+  --step-4:  clamp(2.75rem, 1.2rem + 6.2vw, 5rem);
 
   --font: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont,
           'Segoe UI', 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
@@ -33,15 +40,18 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg:            #14140f;
-    --bg-elevated:   #1c1c18;
-    --text:          #ecebe6;
-    --text-muted:    #a4a29a;
-    --text-subtle:   #7b7972;
-    --accent:        #6fc79e;
-    --accent-soft:   #1d2b25;
-    --border:        #2e2e28;
-    --border-strong: #43423a;
+    --bg:            #0a1439;
+    --bg-elevated:   #121e4d;
+    --text:          #eef1fa;
+    --text-muted:    #a6b0d0;
+    --text-subtle:   #7b87ad;
+    --accent:        #7fa0ff;
+    --accent-soft:   #1a2a63;
+    --on-accent:     #0a1439;
+    --success:       #5fd07d;
+    --success-soft:  #16351f;
+    --border:        #22306b;
+    --border-strong: #35457f;
   }
 }
 
@@ -204,11 +214,11 @@ img { max-width: 100%; height: auto; }
 .btn--primary {
   background: var(--accent);
   border-color: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
 }
 
 .btn--primary:hover {
-  color: #fff;
+  color: var(--on-accent);
   opacity: .88;
 }
 
@@ -355,11 +365,12 @@ img { max-width: 100%; height: auto; }
   gap: 6px;
 }
 
+/* 성과 수치에만 초록을 씁니다. 나머지 강조는 파랑. */
 .tag {
   font-size: 0.8125rem;
   font-weight: 600;
-  color: var(--accent);
-  background: var(--accent-soft);
+  color: var(--success);
+  background: var(--success-soft);
   padding: 3px 9px;
   border-radius: 6px;
   font-variant-numeric: tabular-nums;
@@ -471,7 +482,7 @@ img { max-width: 100%; height: auto; }
 
 .metric__value {
   display: block;
-  font-size: 2.25rem;
+  font-size: clamp(2.25rem, 1.4rem + 2.6vw, 3.25rem);
   font-weight: 800;
   line-height: 1.2;
   letter-spacing: -0.045em;
