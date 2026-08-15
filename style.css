@@ -377,6 +377,84 @@ img { max-width: 100%; height: auto; }
 }
 
 /* ===================================================================
+   7-2. 지원 회사와의 접점 블록 (변형 버전 전용)
+   =================================================================== */
+
+.fit { display: grid; gap: 12px; }
+
+.fit__item {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  gap: 20px;
+  padding: 20px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+@media (max-width: 720px) {
+  .fit__item { grid-template-columns: 1fr; gap: 10px; }
+}
+
+.fit__area {
+  font-size: var(--step--1);
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.5;
+}
+
+.fit__what { color: var(--text-muted); font-size: var(--step--1); margin: 0 0 8px; }
+
+.fit__result {
+  font-size: var(--step--1);
+  color: var(--text);
+  margin: 0;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+
+.fit__result strong { color: var(--success); font-weight: 700; }
+
+/* ===================================================================
+   7-3. 카드 — 문제 / 해결 / 성과 3조각 (변형 버전 전용)
+   토스는 세 공고 모두 '프로젝트 나열'이 아니라 흐름을 요구합니다.
+   =================================================================== */
+
+.card__org {
+  display: block;
+  font-size: 0.8125rem;
+  color: var(--text-subtle);
+  margin-bottom: 6px;
+}
+
+.card__flow { margin: 0 0 14px; }
+
+.card__flow > div {
+  display: grid;
+  grid-template-columns: 38px 1fr;
+  gap: 10px;
+  padding: 6px 0;
+}
+
+.card__flow > div + div { border-top: 1px solid var(--border); }
+
+.card__flow dt {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-subtle);
+  letter-spacing: 0.02em;
+  padding-top: 2px;
+}
+
+.card__flow dd {
+  margin: 0;
+  font-size: var(--step--1);
+  color: var(--text-muted);
+}
+
+.card__flow .is-solution dt { color: var(--accent); }
+
+/* ===================================================================
    8. 본문 서술 (About / How I Work)
    =================================================================== */
 
