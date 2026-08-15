@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>외국인 전용 멤버십 카드 서비스 · 오승윤</title>
+<meta name="description" content="그룹에 외국인 매출을 식별할 수단이 없던 상황에서 전용 멤버십 카드로 식별 인프라를 만들고, 마트 검증 후 백화점으로 확장한 프로젝트.">
+<link rel="stylesheet" href="../style.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a class="nav__name" href="../index.html">오승윤</a>
+    <div class="nav__links">
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<!-- ==========================================================
+     헤더 — 무엇을, 어떤 역할로, 언제
+     ========================================================== -->
+<header class="proj-hero">
+  <div class="wrap">
+    <a class="proj-back" href="../index.html#projects">← 프로젝트 목록</a>
+    <p class="proj-hero__org">롯데멤버스</p>
+    <h1 class="proj-hero__title">외국인 전용 멤버십 카드 서비스 구축 및 고도화</h1>
+    <p class="proj-hero__summary">
+      그룹에는 외국인 매출을 식별할 수단이 없고, 외국인 고객은 가입할 경로가 없어 혜택에서
+      배제되는 상황이었습니다. 전용 멤버십 카드로 두 문제를 동시에 풀고, 매장 발급부터
+      현장 운영까지 설계했습니다.
+    </p>
+
+    <div class="proj-meta">
+      <div>
+        <span class="proj-meta__label">역할</span>
+        <span class="proj-meta__value">프로젝트 총괄</span>
+      </div>
+      <div>
+        <span class="proj-meta__label">기간</span>
+        <span class="proj-meta__value">2025.01 – 진행 중</span>
+      </div>
+      <div>
+        <span class="proj-meta__label">협업</span>
+        <span class="proj-meta__value">3개 팀 · 5개 계열사 · 매장 현장 조직</span>
+      </div>
+      <div>
+        <span class="proj-meta__label">담당 범위</span>
+        <span class="proj-meta__value">회원 체계 · 가입/발급 프로세스 · 카드 제작 · 현장 운영 · 채널 확장</span>
+      </div>
+    </div>
+
+    <!-- 성과를 맨 위에. 훑는 사람이 먼저 보는 자리입니다. -->
+    <div class="outcomes" data-reveal="stagger">
+      <div>
+        <span class="outcome__value" data-count="140000" data-suffix="명">140,000명</span>
+        <span class="outcome__label">외국인 회원 가입 (2026.06 기준)</span>
+      </div>
+      <div>
+        <span class="outcome__value" data-count="520" data-suffix="억 원">520억 원</span>
+        <span class="outcome__label">카드로 식별한 외국인 매출</span>
+      </div>
+      <div>
+        <span class="outcome__value" data-count="3" data-suffix="배">3배</span>
+        <span class="outcome__label">회원 객단가 (마트, 비회원 대비)</span>
+      </div>
+      <div>
+        <span class="outcome__value">대표상</span>
+        <span class="outcome__label">롯데백화점 대표상 수상 (2026.05)</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ==========================================================
+     문제
+     ========================================================== -->
+<section class="proj-section">
+  <div class="wrap">
+    <h2 class="proj-section__title">문제 — 보이지 않는 매출</h2>
+    <div class="prose">
+      <p>
+        외국인 고객은 프로모션 없이도 마트·백화점에서 <strong>연 약 20%씩 매출이 늘고</strong> 있었습니다.
+        그런데 그룹은 이 매출을 식별할 수단이 없었습니다.
+      </p>
+      <p>
+        원인은 네 층에 걸쳐 있었습니다. 그룹은 내수에 집중해 외국인을 별도 관리할 니즈 자체가 없었고,
+        계열사는 마케팅 의지가 있었으나 <strong>통합 인프라가 없어</strong> 산발적으로 움직이며 효과를 측정하지 못했습니다.
+        고객 쪽은 더 근본적이었습니다. 국내 본인인증 수단이 없어 <strong>정회원 가입 경로 자체가 없었고</strong>,
+        그래서 회원 할인과 포인트 적립에서 구조적으로 배제되어 있었습니다.
+      </p>
+      <p>
+        즉 매출은 늘어나는데 그 매출이 누구의 것인지 알 수 없었고, 정작 그 고객은 아무 혜택도 받지 못하고 있었습니다.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================
+     검증 설계
+     ========================================================== -->
+<section class="proj-section">
+  <div class="wrap">
+    <h2 class="proj-section__title">어떻게 검증할지부터 정했습니다</h2>
+    <div class="prose">
+      <p>선례가 없는 서비스였습니다. 그래서 만들기 전에 무엇을 확인해야 하는지부터 정리했습니다.</p>
+    </div>
+
+    <div class="decision">
+      <div class="decision__row">
+        <span class="decision__label">가설</span>
+        <div class="decision__body">
+          ① 전용 카드를 만들면 외국인 고객은 가입한다<br>
+          ② 카드가 ‘한국 방문의 기념품’이 되면 <strong>카드 자체가 가입 동기</strong>가 된다<br>
+          ③ 가입이 쌓이면 그룹 차원의 매출 식별이 가능해진다
+        </div>
+      </div>
+      <div class="decision__row decision__row--pick">
+        <span class="decision__label">검증 방식</span>
+        <div class="decision__body">
+          사전 조사 대신 <strong>최소 리소스의 마트 선행 오픈 자체를 검증 단계로</strong> 설계했습니다.
+          조사에 쓸 시간에 실제로 열어서 확인하는 쪽이 빠르다고 봤습니다.
+        </div>
+      </div>
+      <div class="decision__row">
+        <span class="decision__label">성공 기준</span>
+        <div class="decision__body">
+          전담 인력도 별도 프로모션도 없는 구조였으므로 <strong>일 100장 발급</strong>을 기준으로 잡았습니다.
+        </div>
+      </div>
+      <div class="decision__row">
+        <span class="decision__label">계열사 순서</span>
+        <div class="decision__body">
+          의사결정이 빠른 마트를 먼저, 세부 합의가 많은 백화점을 나중에.
+          동시 진행보다 <strong>먼저 열어 데이터를 만들고 그 데이터로 다음 계열사를 설득</strong>하는 쪽이 빠를 것으로 판단했습니다.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================
+     회원 체계 트레이드오프 + 흐름도
+     ========================================================== -->
+<section class="proj-section">
+  <div class="wrap">
+    <h2 class="proj-section__title">회원 체계 — 빠른 오픈을 위한 트레이드오프</h2>
+
+    <div class="decision">
+      <div class="decision__row">
+        <span class="decision__label">제약</span>
+        <div class="decision__body">
+          외국인 고객은 국내 휴대폰 본인인증 수단이 없어 <strong>정회원 전환이 구조적으로 불가능</strong>했습니다.
+          정회원이 아니면 할인·적립·사용이 전부 막히므로, 이걸 풀지 못하면 서비스가 성립하지 않았습니다.
+        </div>
+      </div>
+      <div class="decision__row">
+        <span class="decision__label">선택지</span>
+        <div class="decision__body">
+          외국인 전용 회원 체계를 새로 만드는 것이 정석이었습니다. 다만 개발 공수가 커서
+          목표한 오픈 일정 안에는 불가능했습니다.
+        </div>
+      </div>
+      <div class="decision__row decision__row--pick">
+        <span class="decision__label">결정</span>
+        <div class="decision__body">
+          기존 회원 인증 체계의 <strong>식별자 구조를 여권 정보 기반으로 재활용</strong>했습니다.
+          개발 공수를 최소화해 조기 오픈을 확보했습니다.
+        </div>
+      </div>
+      <div class="decision__row">
+        <span class="decision__label">리스크 보완</span>
+        <div class="decision__body">
+          본인인증 공백은 <strong>이메일 점유인증</strong>으로 완화했습니다.
+          원천 차단이 불가능함을 전제로 수용 가능한 범위를 정의한 뒤 오픈을 결정했습니다.
+        </div>
+      </div>
+      <div class="decision__row">
+        <span class="decision__label">부채 상환</span>
+        <div class="decision__body">
+          이 구조의 한계는 이후 <strong>가입 포털 기획(2025.08~)</strong>으로 이어져,
+          임시 구조의 부채를 후속 프로젝트로 직접 회수하고 있습니다.
+        </div>
+      </div>
+    </div>
+
+    <!-- 카드 발급 시 포인트 지급 흐름 -->
+    <figure class="diagram" data-reveal>
+      <svg viewBox="0 0 720 240" role="img" aria-label="카드 발급 시 포인트 지급 흐름도. 고객이 매장 화면에서 발급을 요청하면 회원 시스템이 최초 입회자인지 판별하고, 승인 시스템을 거쳐 웰컴 포인트가 지급됩니다.">
+        <!-- 주체 4개 -->
+        <g data-fade data-step="1">
+          <rect class="d-node" x="8"   y="40" width="130" height="52" rx="8"/>
+          <text class="d-label" x="73"  y="64" text-anchor="middle">고객</text>
+          <text class="d-sub"   x="73"  y="80" text-anchor="middle">매장 창구</text>
+        </g>
+        <g data-fade data-step="2">
+          <rect class="d-node" x="196" y="40" width="130" height="52" rx="8"/>
+          <text class="d-label" x="261" y="64" text-anchor="middle">발급 화면</text>
+          <text class="d-sub"   x="261" y="80" text-anchor="middle">여권 정보 입력</text>
+        </g>
+        <g data-fade data-step="3">
+          <rect class="d-node d-node--accent" x="384" y="40" width="130" height="52" rx="8"/>
+          <text class="d-label" x="449" y="64" text-anchor="middle">회원 시스템</text>
+          <text class="d-sub"   x="449" y="80" text-anchor="middle">최초 입회자 판별</text>
+        </g>
+        <g data-fade data-step="4">
+          <rect class="d-node" x="572" y="40" width="130" height="52" rx="8"/>
+          <text class="d-label" x="637" y="64" text-anchor="middle">승인 시스템</text>
+          <text class="d-sub"   x="637" y="80" text-anchor="middle">발급 확정</text>
+        </g>
+
+        <!-- 연결선 -->
+        <path class="d-line" data-draw data-step="2" pathLength="1" d="M138 66 L190 66"/>
+        <path class="d-line" data-draw data-step="3" pathLength="1" d="M326 66 L378 66"/>
+        <path class="d-line" data-draw data-step="4" pathLength="1" d="M514 66 L566 66"/>
+
+        <!-- 화살촉 -->
+        <path class="d-line" data-draw data-step="2" pathLength="1" d="M182 60 L190 66 L182 72"/>
+        <path class="d-line" data-draw data-step="3" pathLength="1" d="M370 60 L378 66 L370 72"/>
+        <path class="d-line" data-draw data-step="4" pathLength="1" d="M558 60 L566 66 L558 72"/>
+
+        <!-- 회귀 경로: 웰컴 포인트 지급 -->
+        <path class="d-line d-line--accent" data-draw data-step="5" pathLength="1"
+              d="M637 92 L637 150 L449 150"/>
+        <path class="d-line d-line--accent" data-draw data-step="5" pathLength="1"
+              d="M457 142 L449 150 L457 158"/>
+
+        <g data-fade data-step="6">
+          <rect class="d-node d-node--success" x="240" y="168" width="240" height="52" rx="8"/>
+          <text class="d-label" x="360" y="192" text-anchor="middle">웰컴 포인트 지급</text>
+          <text class="d-sub"   x="360" y="208" text-anchor="middle">최초 입회자에 한해 자동 적립</text>
+        </g>
+
+        <path class="d-line d-line--accent" data-draw data-step="6" pathLength="1"
+              d="M449 150 L360 150 L360 162"/>
+        <path class="d-line d-line--accent" data-draw data-step="6" pathLength="1"
+              d="M354 154 L360 162 L366 154"/>
+      </svg>
+      <figcaption class="diagram__caption">
+        카드 발급 시 포인트 지급 흐름 — 4개 주체 간 요청·응답 순서와 최초 입회자 판별 후 웰컴 포인트를 지급하는 연동 구조.
+        보안을 위해 실제 산출물 대신 구조만 재구성했습니다.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ==========================================================
+     기획에서 실물까지
+     ========================================================== -->
+<section class="proj-section">
+  <div class="wrap">
+    <h2 class="proj-section__title">기획에서 실물까지</h2>
+    <div class="prose">
+      <p>
+        <strong>콘셉트.</strong> “한국 방문의 기념품”으로 방향을 잡고, 한국 전통 자개 디자인을 제시해
+        디자이너와 구체화했습니다. 멤버십 기능 외에 <strong>간직할 이유</strong>를 카드에 넣는 것이 목표였습니다.
+      </p>
+      <p>
+        <strong>실물 제작.</strong> 화면과 프로세스 설계에서 끝내지 않고 제작 업체를 직접 발굴하고
+        공장을 방문해 실사한 뒤 선정했습니다. 고객 안내문, 쿠폰 패키지 구성, 현장 운영 방식까지 담당했습니다.
+      </p>
+      <p>
+        결과적으로 현장 반응에서 <strong>가설 ②가 확인</strong>됐습니다. 카드 자체가 가입 동기로 작동했습니다.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================
+     확장 타임라인
+     ========================================================== -->
+<section class="proj-section">
+  <div class="wrap">
+    <h2 class="proj-section__title">검증에서 확장으로</h2>
+
+    <div class="timeline" data-reveal="stagger">
+      <div class="tl-item">
+        <span class="tl-date">2025.03</span>
+        <p class="tl-title">롯데마트 서울역점 — 가설 검증</p>
+        <p class="tl-body">
+          외국인 매출 비중이 가장 높은 1개점에서만 열었습니다. 전담 인력 없이
+          매장 고객센터 응대만으로 운영하는 최소 리소스 구조였습니다.
+          4개 계열사와 협업해 쿠폰 패키지를 구성했습니다.
+        </p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-date">검증 결과</span>
+        <p class="tl-title">수요는 확인, 운영 부담도 확인</p>
+        <p class="tl-body">
+          발급량이 예상을 넘겼습니다. 동시에 <strong>현장 리소스 부족</strong>이라는 과제가 드러났습니다.
+          최소 리소스 검증이 빠른 오픈을 가능하게 했지만 현장 부담이라는 비용을 수반했습니다.
+        </p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-date">예상 밖</span>
+        <p class="tl-title">해외 인플루언서 바이럴</p>
+        <p class="tl-body">
+          일본·대만 인플루언서들이 ‘한국 여행 팁’으로 소개하면서 바이럴이 일어났고,
+          서울역점이 쇼핑 성지로 자리 잡았습니다. 확장의 결정적 동력은 내부 보고가 아니라 고객이었습니다.
+          이후 영종도·제주·광복(부산)점으로 확대했습니다.
+        </p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-date">2025.12</span>
+        <p class="tl-title">롯데백화점 본점 — 완성도 우선 확장</p>
+        <p class="tl-body">
+          세부 합의가 많은 채널 특성상 프로세스와 서비스를 완성한 상태에서 열었습니다.
+          여권 스캐너를 도입하고, 매장 동선에 맞춘 전용 가입 부스와 운영 프로세스를 설계했습니다.
+        </p>
+      </div>
+      <div class="tl-item tl-item--final">
+        <span class="tl-date">2026.05</span>
+        <p class="tl-title">잠실점 · 부산점 확대</p>
+        <p class="tl-body">
+          본점 성과를 근거로 확장했습니다. 이 성과로 롯데백화점 대표상을 받았습니다.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================
+     그 외 설계
+     ========================================================== -->
+<section class="proj-section">
+  <div class="wrap">
+    <h2 class="proj-section__title">가입만 열고 끝내지 않았습니다</h2>
+    <div class="prose">
+      <p>
+        <strong>탈퇴 경로.</strong> 실물 카드로 가입한 회원은 본인을 확인할 수단이 애초에 없어
+        기존 온라인 탈퇴 채널을 쓸 수 없었습니다. 가입 경로와 동일하게 오프라인으로 접수하되,
+        <strong>신분증과 가입 시 이메일을 2단 필수 확인 요건</strong>으로 정의했습니다.
+        편의보다 오식별 방지를 앞에 뒀습니다. 가입만 열고 탈퇴를 비워두면 결국 고객센터 수기 업무로 남습니다.
+      </p>
+      <p>
+        <strong>데이터 자산화.</strong> 카드 가입과 구매를 연결해 축적한 데이터는 실적 집계를 넘어
+        그룹 공통 자산이 됐습니다. 현재 이 데이터로 <strong>외국인 회원 트렌드 리포트</strong>를 작성해
+        전 계열사에 제공하고 있습니다. 식별 불가 상태에서 출발해 계열사 공통 참고 기반을 만든 셈입니다.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================
+     배움
+     ========================================================== -->
+<section class="proj-section">
+  <div class="wrap">
+    <h2 class="proj-section__title">배움</h2>
+    <div class="prose">
+      <p><strong>검증은 조사보다 오픈.</strong> 최소 리소스로 먼저 여는 쪽이 사전 조사보다 빨랐습니다.</p>
+      <p><strong>확산 동력은 보고가 아니라 고객.</strong> 제품 자체의 매력이 곧 마케팅이 된다는 것을 경험했습니다.</p>
+      <p><strong>계열사 차이는 순서로 푼다.</strong> 빠른 마트로 데이터를 만들고, 그 데이터로 백화점을 설득했습니다.</p>
+      <p>
+        <strong>검증 설계에 운영 리소스까지 넣어야 한다.</strong> 현장 부담이라는 비용을 뒤늦게 확인했습니다.
+        이 배움은 가입 프로세스 온라인화 과제로 이어졌습니다.
+      </p>
+    </div>
+    <p style="margin-top:32px">
+      <a class="btn" href="../index.html#projects">← 프로젝트 목록으로</a>
+    </p>
+  </div>
+</section>
+
+</main>
+
+<script src="../motion.js"></script>
+
+<footer class="footer">
+  <div class="wrap">© 2026 오승윤</div>
+</footer>
+
+</body>
+</html>
