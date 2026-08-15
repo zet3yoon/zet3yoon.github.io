@@ -85,6 +85,34 @@ a {
   text-decoration: none;
 }
 
+/* 키보드 포커스 표시.
+   :focus 대신 :focus-visible을 쓰면 마우스 클릭에는 링이 뜨지 않고
+   키보드로 이동할 때만 나타납니다. */
+:where(a, button, [tabindex]):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* 네비게이션을 건너뛰는 링크. 평소에는 화면 밖에 있다가
+   탭을 누르면 나타납니다. 키보드 사용자가 매번 메뉴를 지나치지 않아도 됩니다. */
+.skip {
+  position: absolute;
+  left: -9999px;
+  z-index: 100;
+  padding: 12px 20px;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-size: var(--step--1);
+  font-weight: 600;
+  border-radius: 0 0 8px 0;
+}
+
+.skip:focus {
+  left: 0;
+  top: 0;
+}
+
 img { max-width: 100%; height: auto; }
 
 /* ===================================================================
@@ -146,12 +174,29 @@ img { max-width: 100%; height: auto; }
 
 .nav__links {
   display: flex;
-  gap: 20px;
+  gap: 8px;
   font-size: var(--step--1);
   color: var(--text-muted);
 }
 
+/* 터치 타깃 최소 44px. 글자만 있으면 25px밖에 안 돼 손가락으로 누르기 어렵습니다. */
+.nav__links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 10px;
+}
+
 .nav__links a:hover { color: var(--accent); }
+
+.nav__name {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0 6px;
+  margin-left: -6px;   /* 패딩을 넣어도 좌측 정렬이 어긋나지 않게 */
+}
 
 @media (max-width: 620px) {
   .nav__links { display: none; }
