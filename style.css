@@ -989,6 +989,51 @@ html:not(.js) .meter__fill { width: var(--w); }
   .meter__fill { transition: none !important; width: var(--w) !important; }
 }
 
+/* 산출물 이미지 — 정보 밀도가 높아 축소하면 읽히지 않습니다.
+   그래서 클릭하면 원본 크기로 열리게 합니다. */
+.shots {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+  margin: 28px 0 0;
+}
+
+.shot {
+  margin: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg-elevated);
+}
+
+.shot a {
+  display: block;
+  position: relative;
+  background: #fff;   /* 산출물 원본이 흰 배경이라 다크에서도 흰 판 위에 둡니다 */
+}
+
+.shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: opacity .15s ease;
+}
+
+.shot a:hover img { opacity: .82; }
+
+.shot figcaption {
+  padding: 12px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.shot__zoom {
+  display: block;
+  margin-top: 4px;
+  color: var(--text-subtle);
+}
+
 .chart__note {
   margin-top: 16px;
   padding-top: 14px;
