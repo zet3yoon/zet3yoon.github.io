@@ -697,6 +697,13 @@ img { max-width: 100%; height: auto; }
 
 .decision__body strong { color: var(--text); font-weight: 600; }
 
+/* 한글은 기울임이 잘 읽히지 않으므로 라벨처럼 처리합니다. */
+.decision__body em {
+  font-style: normal;
+  font-weight: 700;
+  color: var(--text-subtle);
+}
+
 /* ===================================================================
    14. 다이어그램
    SVG path에 pathLength="1"을 주면 길이가 달라도 dasharray를 1로
