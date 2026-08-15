@@ -192,55 +192,51 @@
 
     <!-- 카드 발급 시 포인트 지급 흐름 -->
     <figure class="diagram" data-reveal>
-      <svg viewBox="0 0 720 240" role="img" aria-label="카드 발급 시 포인트 지급 흐름도. 고객이 매장 화면에서 발급을 요청하면 회원 시스템이 최초 입회자인지 판별하고, 승인 시스템을 거쳐 웰컴 포인트가 지급됩니다.">
+      <!-- fill / stroke를 SVG 속성으로도 지정합니다.
+           CSS가 늦게 오거나 실패해도 검은 덩어리가 되지 않게 하는 안전장치입니다.
+           CSS가 정상 로드되면 클래스 규칙이 이 값을 덮어씁니다. -->
+      <svg viewBox="0 0 760 250" role="img" aria-label="카드 발급 시 포인트 지급 흐름도. 고객이 매장 창구에서 요청하면 발급 화면에서 여권 정보를 입력하고, 회원 시스템이 최초 입회자인지 판별한 뒤 승인 시스템에서 발급이 확정되며, 최초 입회자에게 웰컴 포인트가 자동 적립됩니다.">
         <!-- 주체 4개 -->
         <g data-fade data-step="1">
-          <rect class="d-node" x="8"   y="40" width="130" height="52" rx="8"/>
-          <text class="d-label" x="73"  y="64" text-anchor="middle">고객</text>
-          <text class="d-sub"   x="73"  y="80" text-anchor="middle">매장 창구</text>
+          <rect class="d-node" x="6" y="34" width="150" height="60" rx="10" fill="#f7f8fc" stroke="#c8cdde" stroke-width="2"/>
+          <text class="d-label" x="81" y="60" text-anchor="middle" fill="#0a1439">고객</text>
+          <text class="d-sub"   x="81" y="79" text-anchor="middle" fill="#55608a">매장 창구</text>
         </g>
         <g data-fade data-step="2">
-          <rect class="d-node" x="196" y="40" width="130" height="52" rx="8"/>
-          <text class="d-label" x="261" y="64" text-anchor="middle">발급 화면</text>
-          <text class="d-sub"   x="261" y="80" text-anchor="middle">여권 정보 입력</text>
+          <rect class="d-node" x="204" y="34" width="150" height="60" rx="10" fill="#f7f8fc" stroke="#c8cdde" stroke-width="2"/>
+          <text class="d-label" x="279" y="60" text-anchor="middle" fill="#0a1439">발급 화면</text>
+          <text class="d-sub"   x="279" y="79" text-anchor="middle" fill="#55608a">여권 정보 입력</text>
         </g>
         <g data-fade data-step="3">
-          <rect class="d-node d-node--accent" x="384" y="40" width="130" height="52" rx="8"/>
-          <text class="d-label" x="449" y="64" text-anchor="middle">회원 시스템</text>
-          <text class="d-sub"   x="449" y="80" text-anchor="middle">최초 입회자 판별</text>
+          <rect class="d-node d-node--accent" x="402" y="34" width="150" height="60" rx="10" fill="#e7edfd" stroke="#0c46da" stroke-width="2"/>
+          <text class="d-label" x="477" y="60" text-anchor="middle" fill="#0a1439">회원 시스템</text>
+          <text class="d-sub"   x="477" y="79" text-anchor="middle" fill="#55608a">최초 입회자 판별</text>
         </g>
         <g data-fade data-step="4">
-          <rect class="d-node" x="572" y="40" width="130" height="52" rx="8"/>
-          <text class="d-label" x="637" y="64" text-anchor="middle">승인 시스템</text>
-          <text class="d-sub"   x="637" y="80" text-anchor="middle">발급 확정</text>
+          <rect class="d-node" x="600" y="34" width="150" height="60" rx="10" fill="#f7f8fc" stroke="#c8cdde" stroke-width="2"/>
+          <text class="d-label" x="675" y="60" text-anchor="middle" fill="#0a1439">승인 시스템</text>
+          <text class="d-sub"   x="675" y="79" text-anchor="middle" fill="#55608a">발급 확정</text>
         </g>
 
-        <!-- 연결선 -->
-        <path class="d-line" data-draw data-step="2" pathLength="1" d="M138 66 L190 66"/>
-        <path class="d-line" data-draw data-step="3" pathLength="1" d="M326 66 L378 66"/>
-        <path class="d-line" data-draw data-step="4" pathLength="1" d="M514 66 L566 66"/>
+        <!-- 가로 연결선 + 화살촉 -->
+        <path class="d-line" data-draw data-step="2" pathLength="1" fill="none" stroke="#c8cdde" stroke-width="2" d="M156 64 L196 64"/>
+        <path class="d-line" data-draw data-step="2" pathLength="1" fill="none" stroke="#c8cdde" stroke-width="2" d="M188 58 L196 64 L188 70"/>
+        <path class="d-line" data-draw data-step="3" pathLength="1" fill="none" stroke="#c8cdde" stroke-width="2" d="M354 64 L394 64"/>
+        <path class="d-line" data-draw data-step="3" pathLength="1" fill="none" stroke="#c8cdde" stroke-width="2" d="M386 58 L394 64 L386 70"/>
+        <path class="d-line" data-draw data-step="4" pathLength="1" fill="none" stroke="#c8cdde" stroke-width="2" d="M552 64 L592 64"/>
+        <path class="d-line" data-draw data-step="4" pathLength="1" fill="none" stroke="#c8cdde" stroke-width="2" d="M584 58 L592 64 L584 70"/>
 
-        <!-- 화살촉 -->
-        <path class="d-line" data-draw data-step="2" pathLength="1" d="M182 60 L190 66 L182 72"/>
-        <path class="d-line" data-draw data-step="3" pathLength="1" d="M370 60 L378 66 L370 72"/>
-        <path class="d-line" data-draw data-step="4" pathLength="1" d="M558 60 L566 66 L558 72"/>
-
-        <!-- 회귀 경로: 웰컴 포인트 지급 -->
-        <path class="d-line d-line--accent" data-draw data-step="5" pathLength="1"
-              d="M637 92 L637 150 L449 150"/>
-        <path class="d-line d-line--accent" data-draw data-step="5" pathLength="1"
-              d="M457 142 L449 150 L457 158"/>
+        <!-- 회귀 경로: 승인 → 웰컴 포인트 -->
+        <path class="d-line d-line--accent" data-draw data-step="5" pathLength="1" fill="none" stroke="#0c46da" stroke-width="2"
+              d="M675 94 L675 132 L380 132 L380 166"/>
+        <path class="d-line d-line--accent" data-draw data-step="5" pathLength="1" fill="none" stroke="#0c46da" stroke-width="2"
+              d="M374 158 L380 166 L386 158"/>
 
         <g data-fade data-step="6">
-          <rect class="d-node d-node--success" x="240" y="168" width="240" height="52" rx="8"/>
-          <text class="d-label" x="360" y="192" text-anchor="middle">웰컴 포인트 지급</text>
-          <text class="d-sub"   x="360" y="208" text-anchor="middle">최초 입회자에 한해 자동 적립</text>
+          <rect class="d-node d-node--success" x="255" y="170" width="250" height="60" rx="10" fill="#e6f5e9" stroke="#1d6e31" stroke-width="2"/>
+          <text class="d-label" x="380" y="196" text-anchor="middle" fill="#0a1439">웰컴 포인트 지급</text>
+          <text class="d-sub"   x="380" y="215" text-anchor="middle" fill="#55608a">최초 입회자에 한해 자동 적립</text>
         </g>
-
-        <path class="d-line d-line--accent" data-draw data-step="6" pathLength="1"
-              d="M449 150 L360 150 L360 162"/>
-        <path class="d-line d-line--accent" data-draw data-step="6" pathLength="1"
-              d="M354 154 L360 162 L366 154"/>
       </svg>
       <figcaption class="diagram__caption">
         카드 발급 시 포인트 지급 흐름 — 4개 주체 간 요청·응답 순서와 최초 입회자 판별 후 웰컴 포인트를 지급하는 연동 구조.
@@ -269,6 +265,48 @@
         결과적으로 현장 반응에서 <strong>가설 ②가 확인</strong>됐습니다. 카드 자체가 가입 동기로 작동했습니다.
       </p>
     </div>
+
+    <!-- 회원 객단가 비교 — 비회원을 기준선으로 두고 회원만 강조 -->
+    <figure class="chart" data-reveal>
+      <figcaption>
+        <p class="chart__title">회원 객단가 — 비회원 대비</p>
+        <p class="chart__sub">비회원 구매액을 1로 두었을 때의 배수 · 2026.06 기준</p>
+      </figcaption>
+
+      <div class="chart__legend">
+        <span class="key"><i class="key__swatch"></i>비회원</span>
+        <span class="key"><i class="key__swatch key__swatch--accent"></i>회원</span>
+      </div>
+
+      <div class="bar-group">
+        <p class="bar-group__name">롯데마트</p>
+        <div class="bar-row">
+          <span class="bar-track"><span class="bar" style="--w:33%"></span></span>
+          <span class="bar__val">1배</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-track"><span class="bar bar--accent" style="--w:100%"></span></span>
+          <span class="bar__val">약 3배</span>
+        </div>
+      </div>
+
+      <div class="bar-group">
+        <p class="bar-group__name">롯데백화점</p>
+        <div class="bar-row">
+          <span class="bar-track"><span class="bar" style="--w:33%"></span></span>
+          <span class="bar__val">1배</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-track"><span class="bar bar--accent" style="--w:67%"></span></span>
+          <span class="bar__val">2배 이상</span>
+        </div>
+      </div>
+
+      <p class="chart__note">
+        가입 시 제공한 쿠폰 혜택의 영향이 일부 반영된 수치입니다. 그럼에도 멤버십 가입이
+        외국인 고객의 구매 의사결정에 긍정적으로 작용했음을 보여주는 지표로 판단했습니다.
+      </p>
+    </figure>
   </div>
 </section>
 

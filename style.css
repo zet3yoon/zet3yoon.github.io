@@ -480,13 +480,15 @@ img { max-width: 100%; height: auto; }
   .metrics { grid-template-columns: 1fr; gap: 22px; }
 }
 
+/* 큰 표시용 숫자에는 tabular-nums를 쓰지 않습니다.
+   모든 자릿수를 0 너비로 맞추면 큰 크기에서 글자가 벌어져 보입니다.
+   자릿수 정렬이 필요한 표나 축 눈금에서만 씁니다. */
 .metric__value {
   display: block;
   font-size: clamp(2.25rem, 1.4rem + 2.6vw, 3.25rem);
   font-weight: 800;
   line-height: 1.2;
   letter-spacing: -0.045em;
-  font-variant-numeric: tabular-nums;
   margin-bottom: 4px;
 }
 
@@ -648,7 +650,6 @@ img { max-width: 100%; height: auto; }
   line-height: 1.2;
   letter-spacing: -0.04em;
   color: var(--success);
-  font-variant-numeric: tabular-nums;
   margin-bottom: 4px;
 }
 
@@ -777,7 +778,108 @@ img { max-width: 100%; height: auto; }
 }
 
 /* ===================================================================
-   15. 확장 타임라인
+   15. 차트
+   막대는 HTML 요소입니다. SVG보다 짧고 반응형에 유리합니다.
+   강조 방식: 기준값은 회색, 말하려는 값만 액센트. 색이 아니라 대비로 읽힙니다.
+   =================================================================== */
+
+.chart {
+  margin: 28px 0;
+  padding: 24px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.chart__title {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.chart__sub {
+  font-size: 0.8125rem;
+  color: var(--text-subtle);
+  margin-bottom: 18px;
+}
+
+.chart__legend {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+.key { display: inline-flex; align-items: center; gap: 6px; }
+
+.key__swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  background: var(--border-strong);
+}
+
+.key__swatch--accent { background: var(--accent); }
+
+.bar-group + .bar-group { margin-top: 20px; }
+
+.bar-group__name {
+  font-size: var(--step--1);
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+
+.bar-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* 인접 막대 사이는 테두리가 아니라 여백으로 구분합니다. */
+.bar-row + .bar-row { margin-top: 6px; }
+
+.bar-track { flex: 1; min-width: 0; }
+
+.bar {
+  display: block;
+  height: 18px;
+  width: 0;
+  background: var(--border-strong);
+  border-radius: 0 4px 4px 0;   /* 시작점은 각지게, 끝점만 둥글게 */
+  transition: width .9s cubic-bezier(.22, .68, .3, 1);
+}
+
+.bar--accent { background: var(--accent); }
+
+.js [data-reveal].is-visible .bar,
+.js .chart.is-visible .bar { width: var(--w); }
+
+/* 자바스크립트가 없으면 처음부터 최종 너비로 둡니다. */
+html:not(.js) .bar { width: var(--w); }
+
+.bar__val {
+  flex: 0 0 auto;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  min-width: 56px;
+}
+
+.chart__note {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  font-size: 0.8125rem;
+  color: var(--text-subtle);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bar { transition: none !important; width: var(--w) !important; }
+}
+
+/* ===================================================================
+   16. 확장 타임라인
    =================================================================== */
 
 .timeline { margin: 28px 0; padding-left: 4px; }
