@@ -944,6 +944,51 @@ html:not(.js) .bar { width: var(--w); }
   margin: 0;
 }
 
+/* 미터 — 전체 대비 하나의 비율을 보여줄 때.
+   빈 구간은 같은 색 계열의 옅은 단계로 두어 전체가 한 덩어리로 읽히게 합니다. */
+.meter { margin: 4px 0 0; }
+
+.meter__value {
+  font-size: clamp(1.75rem, 1.2rem + 1.8vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+  color: var(--accent);
+  margin: 0 0 10px;
+}
+
+.meter__track {
+  height: 14px;
+  border-radius: 7px;
+  background: var(--accent-soft);
+  overflow: hidden;
+}
+
+.meter__fill {
+  display: block;
+  height: 100%;
+  width: 0;
+  border-radius: 7px;
+  background: var(--accent);
+  transition: width .9s cubic-bezier(.22, .68, .3, 1);
+}
+
+.js [data-reveal].is-visible .meter__fill { width: var(--w); }
+html:not(.js) .meter__fill { width: var(--w); }
+
+.meter__scale {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  font-size: 0.8125rem;
+  color: var(--text-subtle);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .meter__fill { transition: none !important; width: var(--w) !important; }
+}
+
 .chart__note {
   margin-top: 16px;
   padding-top: 14px;
