@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects 시안 — 결정 목록</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="proto-decisions.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a class="nav__name" href="index-toss.html">← 토스 버전으로</a>
+    <div class="nav__links"><span>Projects 섹션 시안</span></div>
+  </div>
+</nav>
+
+<main>
+<section class="section">
+  <div class="wrap">
+    <h2 class="section__title">Projects</h2>
+    <p class="section__lead">
+      12건 모두 제약 안에서 무엇을 포기하고 무엇을 지켰는지의 기록입니다.
+      그 갈림길을 그대로 적었습니다.
+    </p>
+
+    <div class="dec-group">
+      <p class="dec-group__name">매장 · 현장 서비스</p>
+      <div class="dec-list" data-reveal="stagger">
+
+        <a class="dec" href="projects/foreign-membership-card.html">
+          <div class="dec__when"><b>2025.01 –</b>롯데멤버스<br>프로젝트 총괄</div>
+          <div class="dec__body">
+            <p class="dec__limit">외국인 고객은 국내 본인인증 수단이 없어 정회원 가입 자체가 불가능했다</p>
+            <div class="dec__fork">
+              <span class="dec__rule"></span>
+              <div class="dec__paths">
+                <span class="dec__drop" data-k="포기">전용 회원 체계 신규 구축 — 정석이지만 목표 일정 안에 불가</span>
+                <span class="dec__pick" data-k="선택">기존 식별자 구조를 여권 기반으로 재활용, 공백은 이메일 점유인증으로 보완</span>
+              </div>
+            </div>
+            <p class="dec__result">
+              외국인 회원 <b>14만 명</b> 가입 · 식별 매출 <b>520억 원</b> · 계열사 교차 이용 <b>40%</b><br>
+              임시 구조의 부채는 이후 가입 포털 기획으로 직접 상환
+            </p>
+            <span class="dec__more">자세히 →</span>
+          </div>
+        </a>
+
+        <a class="dec" href="projects/foreign-signup-portal.html">
+          <div class="dec__when"><b>2025.08 –</b>롯데멤버스</div>
+          <div class="dec__body">
+            <p class="dec__limit">회원이 늘수록 카드 제작비와 현장 인력이 함께 늘어나는 변동비 구조였다</p>
+            <div class="dec__fork">
+              <span class="dec__rule"></span>
+              <div class="dec__paths">
+                <span class="dec__drop" data-k="포기">현장 발급 유지 + 인력 증원 · 실물 카드 유지하고 등록만 온라인화</span>
+                <span class="dec__pick" data-k="선택">실물 카드를 없애고 가입 경로 자체를 점포에서 분리</span>
+              </div>
+            </div>
+            <p class="dec__result">
+              회원 획득 단가 <b>2,000원 → 0원</b> · 일 <b>60~100건</b> 가입<br>
+              변동비를 고정비로 바꾼 것이 결정의 실질
+            </p>
+            <span class="dec__more">자세히 →</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+    <div class="dec-group">
+      <p class="dec-group__name">정산 · 데이터 구조</p>
+      <div class="dec-list" data-reveal="stagger">
+
+        <a class="dec" href="projects/overseas-vendor.html">
+          <div class="dec__when"><b>2024.03 – 2025.04</b>롯데멤버스</div>
+          <div class="dec__body">
+            <p class="dec__limit">영국 기준으로 만들어진 벤더 백엔드였고, 벤더는 구조 변경을 계속 거부했다</p>
+            <div class="dec__fork">
+              <span class="dec__rule"></span>
+              <div class="dec__paths">
+                <span class="dec__drop" data-k="포기">벤더 백엔드 수정 협상 — 일정 리스크가 큼</span>
+                <span class="dec__pick" data-k="선택">조회 지점을 옮김. 잔액 확인 시 포인트 앱을 앱인앱으로 호출</span>
+              </div>
+            </div>
+            <p class="dec__result">
+              벤더 백엔드 수정 <b>0건</b>으로 정합성 요건 충족<br>
+              규제 해석이 갈린 항목은 덮지 않고 리스크 합의 문서로 종결
+            </p>
+            <span class="dec__more">자세히 →</span>
+          </div>
+        </a>
+
+        <a class="dec" href="projects/lotte-on-tier.html">
+          <div class="dec__when"><b>2026.03 –</b>롯데멤버스</div>
+          <div class="dec__body">
+            <p class="dec__limit">제안된 유료 멤버십은 시장 수준 적립률 유지 시 초기 1년 적립 비용만 수십억 규모였다</p>
+            <div class="dec__fork">
+              <span class="dec__rule"></span>
+              <div class="dec__paths">
+                <span class="dec__drop" data-k="포기">일반 적립 — 적립 시점에 수수료가 발생해 적립률과 비용이 함께 오름</span>
+                <span class="dec__pick" data-k="선택">보류를 제안하되 종결 조건을 명시하고, 같은 보고에 단기소멸 포인트 대안 제출</span>
+              </div>
+            </div>
+            <p class="dec__result">
+              등급 기준을 <b>금액에서 활동성</b>으로 전환 — 재구매율 금액 <b>67%</b> vs 건수 <b>83%</b><br>
+              사용 시점에만 수수료가 붙어, 비용 절감 수단이 곧 리텐션 장치가 됨
+            </p>
+            <span class="dec__more">자세히 →</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+    <div class="dec-group">
+      <p class="dec-group__name">0 → 1 구축</p>
+      <div class="dec-list" data-reveal="stagger">
+
+        <a class="dec" href="projects/subscription-club.html">
+          <div class="dec__when"><b>2024.10 –</b>롯데멤버스<br>서비스 총괄</div>
+          <div class="dec__body">
+            <p class="dec__limit">정기결제 전용 모듈을 새로 만들 개발 리소스도, 운영할 백오피스도 없었다</p>
+            <div class="dec__fork">
+              <span class="dec__rule"></span>
+              <div class="dec__paths">
+                <span class="dec__drop" data-k="포기">시스템을 다 만든 뒤 오픈</span>
+                <span class="dec__pick" data-k="선택">기존 간편결제 모듈을 재활용하고, 주문 취합부터 발주까지 수기 절차를 문서화해 먼저 오픈</span>
+              </div>
+            </div>
+            <p class="dec__result">
+              앱 MAU 연 감소율 <b>5%대 → 1%대</b> · 구독 서비스 <b>4개</b> 운영<br>
+              성공 기준을 매출이 아닌 방문·유지로 먼저 합의한 것이 방향을 지켰음
+            </p>
+            <span class="dec__more">자세히 →</span>
+          </div>
+        </a>
+
+        <a class="dec" href="projects/matching-platform.html">
+          <div class="dec__when"><b>2021.06 – 2021.10</b>하우빌드</div>
+          <div class="dec__body">
+            <p class="dec__limit">양면 시장의 병목은 공급이었는데, 건축사에게는 올릴 포트폴리오 자체가 없었다</p>
+            <div class="dec__fork">
+              <span class="dec__rule"></span>
+              <div class="dec__paths">
+                <span class="dec__drop" data-k="포기">등록을 요청하고 공급이 모이길 기다림</span>
+                <span class="dec__pick" data-k="선택">사진작가를 고용해 포트폴리오를 직접 제작. 신진은 기획설계 작업을 자산화해 편입</span>
+              </div>
+            </div>
+            <p class="dec__result">
+              직접 미팅 40곳 → 건축사 <b>50곳 이상</b> 영입 · 매칭 월 <b>15건</b> · 공사 계약 <b>3건</b>
+            </p>
+            <span class="dec__more">자세히 →</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<script src="motion.js"></script>
+
+<footer class="footer">
+  <div class="wrap">시안 · 실제 반영 전</div>
+</footer>
+
+</body>
+</html>
