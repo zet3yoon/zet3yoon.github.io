@@ -18,6 +18,37 @@
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* -----------------------------------------------------------------
+     0. 스크롤 위치 복원
+     상세 페이지에서 뒤로 가면 보던 자리로 돌아옵니다.
+     브라우저 기본 복원은 앵커 이동과 충돌해 맨 위로 튀는 경우가 있어
+     프로젝트 목록 위치만 따로 기억합니다.
+     ----------------------------------------------------------------- */
+
+  var KEY = 'portfolio:scroll:' + location.pathname;
+
+  // 카드를 누를 때 현재 위치를 저장합니다.
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest && e.target.closest('a[href*="projects/"]');
+    if (link) {
+      try { sessionStorage.setItem(KEY, String(window.scrollY)); } catch (err) {}
+    }
+  });
+
+  // 뒤로 와서 다시 열렸을 때 복원합니다.
+  // 해시가 있으면 앵커가 우선이므로 건드리지 않습니다.
+  if (!location.hash) {
+    try {
+      var saved = sessionStorage.getItem(KEY);
+      if (saved !== null) {
+        sessionStorage.removeItem(KEY);
+        window.addEventListener('load', function () {
+          window.scrollTo({ top: parseInt(saved, 10), behavior: 'instant' });
+        });
+      }
+    } catch (err) {}
+  }
+
+  /* -----------------------------------------------------------------
      1. 등장 효과
      IntersectionObserver는 "이 요소가 화면에 들어왔는가"를 브라우저가
      알려주는 기능입니다. 스크롤 이벤트를 직접 듣는 것보다 훨씬 가볍습니다.

@@ -59,6 +59,40 @@
 }
 
 /* ===================================================================
+   1-2. 페이지 전환 (View Transitions API)
+   목록에서 상세로 넘어갈 때 흰 화면이 깜빡이지 않고 이어집니다.
+   지원하지 않는 브라우저는 그냥 평소처럼 이동합니다. 기능이 깨지지 않습니다.
+   =================================================================== */
+
+@view-transition { navigation: auto; }
+
+::view-transition-old(root) {
+  animation: vt-out .18s cubic-bezier(.4, 0, 1, 1) both;
+}
+
+::view-transition-new(root) {
+  animation: vt-in .26s cubic-bezier(0, 0, .2, 1) both;
+}
+
+@keyframes vt-out {
+  to { opacity: 0; transform: translateY(-6px); }
+}
+
+@keyframes vt-in {
+  from { opacity: 0; transform: translateY(8px); }
+}
+
+/* 카드에서 상세 페이지 제목으로 이어지는 전환.
+   같은 view-transition-name을 가진 요소끼리 브라우저가 알아서 연결합니다. */
+.card__title,
+.dec__limit { view-transition-name: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) { animation: none; }
+}
+
+/* ===================================================================
    2. 기본 재설정
    =================================================================== */
 
