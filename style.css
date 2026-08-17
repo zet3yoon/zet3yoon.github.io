@@ -635,6 +635,28 @@ img { max-width: 100%; height: auto; }
   margin: 32px 0;
 }
 
+/* gritrail 블록에 사진을 나란히 둡니다.
+   글로만 있던 '시키지 않아도 하는 일'에 근거를 붙이는 자리입니다. */
+.highlight--photo {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+@media (max-width: 620px) {
+  .highlight--photo { grid-template-columns: 1fr; gap: 20px; }
+}
+
+.highlight__photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--radius);
+  display: block;
+}
+
 .highlight__head {
   display: flex;
   align-items: baseline;
