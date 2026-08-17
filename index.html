@@ -38,19 +38,28 @@
      ========================================================== -->
 <header class="hero">
   <div class="wrap">
-    <p class="hero__name">
-      <span class="hero__who">오승윤</span>
-      <span class="hero__role">Product Manager · 롯데멤버스</span>
-    </p>
-    <h1 class="hero__title">매장에서 쓰는 회원·적립 서비스를 만들고,<br>그걸 운영하는 어드민까지 설계합니다</h1>
-    <p class="hero__body">
-      고객이 보는 화면만 그리지 않습니다. 매장 현장 절차와 운영자가 쓰는 관리자 화면,
-      시스템 간 데이터 연동 규격까지 함께 만듭니다.
-      회원 3천만 규모의 포인트·멤버십 플랫폼에서 회원 체계와 등급·정산 정책을 다뤄 왔습니다.
-    </p>
-    <div class="hero__actions">
-      <a class="btn btn--primary" href="#projects">프로젝트 보기</a>
-      <a class="btn" href="mailto:zet3yoon@gmail.com">이메일 보내기</a>
+    <div class="hero__grid">
+      <div>
+        <p class="hero__name">
+          <span class="hero__who">오승윤</span>
+          <span class="hero__role">Product Manager · 롯데멤버스</span>
+        </p>
+        <h1 class="hero__title">매장에서 쓰는 회원·적립 서비스를 만들고,<br>그걸 운영하는 어드민까지 설계합니다</h1>
+        <p class="hero__body">
+          고객이 보는 화면만 그리지 않습니다. 매장 현장 절차와 운영자가 쓰는 관리자 화면,
+          시스템 간 데이터 연동 규격까지 함께 만듭니다.
+          회원 3천만 규모의 포인트·멤버십 플랫폼에서 회원 체계와 등급·정산 정책을 다뤄 왔습니다.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#projects">프로젝트 보기</a>
+          <a class="btn" href="mailto:zet3yoon@gmail.com">이메일 보내기</a>
+        </div>
+      </div>
+
+      <img class="hero__portrait"
+           src="assets/gritrail/portrait.jpg"
+           alt="비 오는 트레일에서 방수 재킷을 입고 선 오승윤"
+           width="800" height="1000">
     </div>
   </div>
 </header>
@@ -505,13 +514,8 @@
         너무 재밌으니까요.
       </p>
 
-      <!-- assets/ 는 .gitignore 대상이라 커밋되지 않습니다.
-           로컬에서만 보이고, 배포 시 공개할지는 따로 결정합니다. -->
-      <div class="highlight highlight--photo" data-reveal>
-        <img class="highlight__photo"
-             src="assets/gritrail/portrait.jpg"
-             alt="비 오는 트레일에서 방수 재킷을 입고 선 오승윤"
-             width="800" height="1000" loading="lazy">
+      <!-- 사진은 히어로로 옮겼습니다. 같은 사진이 두 번 나오면 산만합니다. -->
+      <div class="highlight" data-reveal>
         <div>
           <div class="highlight__head">
             <span class="highlight__title">gritrail</span>
