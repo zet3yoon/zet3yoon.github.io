@@ -27,3 +27,6 @@ _draft/
 
 # 원본 파일은 제외합니다. 웹에는 변환본(portrait.jpg)만 씁니다.
 assets/gritrail/
+
+# 지원 전략 문서. 로컬 참고용이며 공개하지 않습니다.
+docs/
