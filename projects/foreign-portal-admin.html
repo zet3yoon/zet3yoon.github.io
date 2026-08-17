@@ -105,6 +105,61 @@
           유형별로 <strong>등록 항목, 노출 방식, 검증 방식이 달라지는 분기 로직</strong>을 설계했습니다.
         </div>
       </div>
+    </div>
+
+    <figure class="diagram" data-reveal>
+      <svg viewBox="0 0 760 330" role="img" aria-label="쿠폰 등록 하나에서 유형 다섯 가지로 갈라지는 구조. 1회용 고유바코드는 발급 시점에 난수를 생성하고, 공통바코드는 전원 동일한 코드를 쓰며, 이미지형은 검증이 없고, 직원 확인형은 매장에서 비밀번호로 확인하며, 제휴사 발급형은 외부 시스템이 코드를 내려줍니다.">
+        <!-- 출발점 -->
+        <g data-fade data-step="1">
+          <rect class="d-node d-node--accent" x="4" y="133" width="170" height="64" rx="10" fill="#e7edfd" stroke="#0c46da" stroke-width="2"/>
+          <text class="d-label" x="89" y="160" text-anchor="middle" fill="#0a1439">쿠폰 등록</text>
+          <text class="d-sub"   x="89" y="179" text-anchor="middle" fill="#55608a">공통 항목 입력</text>
+        </g>
+
+        <!-- 분기 척추 -->
+        <path class="d-line d-line--accent" data-draw data-step="2" pathLength="1" fill="none" stroke="#0c46da" stroke-width="2" d="M174 165 L206 165"/>
+        <path class="d-line d-line--accent" data-draw data-step="2" pathLength="1" fill="none" stroke="#0c46da" stroke-width="2" d="M206 43 L206 287"/>
+
+        <!-- 유형 5종 -->
+        <g data-fade data-step="3">
+          <path class="d-line" pathLength="1" fill="none" stroke="#c8cdde" stroke-width="2" d="M206 43 L242 43"/>
+          <rect class="d-node" x="242" y="21" width="514" height="44" rx="8" fill="#f7f8fc" stroke="#c8cdde" stroke-width="2"/>
+          <text class="d-label" x="258" y="41" fill="#0a1439">1회용 고유바코드</text>
+          <text class="d-sub"   x="258" y="57" fill="#55608a">발급 시점에 난수 생성 · 1인 1코드 · 발급 번호와 바코드를 목록에 표기</text>
+        </g>
+        <g data-fade data-step="4">
+          <path class="d-line" pathLength="1" fill="none" stroke="#c8cdde" stroke-width="2" d="M206 104 L242 104"/>
+          <rect class="d-node" x="242" y="82" width="514" height="44" rx="8" fill="#f7f8fc" stroke="#c8cdde" stroke-width="2"/>
+          <text class="d-label" x="258" y="102" fill="#0a1439">공통바코드</text>
+          <text class="d-sub"   x="258" y="118" fill="#55608a">전원 동일 코드 · 개별 발급 이력이 없어 목록 표기는 ‘-’</text>
+        </g>
+        <g data-fade data-step="5">
+          <path class="d-line" pathLength="1" fill="none" stroke="#c8cdde" stroke-width="2" d="M206 165 L242 165"/>
+          <rect class="d-node" x="242" y="143" width="514" height="44" rx="8" fill="#f7f8fc" stroke="#c8cdde" stroke-width="2"/>
+          <text class="d-label" x="258" y="163" fill="#0a1439">이미지</text>
+          <text class="d-sub"   x="258" y="179" fill="#55608a">코드 없음 · 검증 단계 자체가 없어 등록 항목이 가장 단순</text>
+        </g>
+        <g data-fade data-step="6">
+          <path class="d-line" pathLength="1" fill="none" stroke="#c8cdde" stroke-width="2" d="M206 226 L242 226"/>
+          <rect class="d-node d-node--success" x="242" y="204" width="514" height="44" rx="8" fill="#e6f5e9" stroke="#1d6e31" stroke-width="2"/>
+          <text class="d-label" x="258" y="224" fill="#0a1439">직원 확인</text>
+          <text class="d-sub"   x="258" y="240" fill="#55608a">매장에서 직원이 확인 · 비밀번호 유무 분기 · 한국어 안내 문구 필드 추가</text>
+        </g>
+        <g data-fade data-step="7">
+          <path class="d-line" pathLength="1" fill="none" stroke="#c8cdde" stroke-width="2" d="M206 287 L242 287"/>
+          <rect class="d-node" x="242" y="265" width="514" height="44" rx="8" fill="#f7f8fc" stroke="#c8cdde" stroke-width="2"/>
+          <text class="d-label" x="258" y="285" fill="#0a1439">제휴사 발급</text>
+          <text class="d-sub"   x="258" y="301" fill="#55608a">외부 시스템이 코드를 내려줌 · 연동 규격과 실패 처리 필요</text>
+        </g>
+      </svg>
+      <figcaption class="diagram__caption">
+        쿠폰 등록은 하나지만 유형에 따라 등록 항목 · 노출 방식 · 검증 방식이 갈립니다.
+        유형을 몇 개로 나눌지가 이 설계의 핵심 결정이었습니다.
+        잘게 나누면 등록 화면이 복잡해지고, 뭉뚱그리면 예외 처리가 늘어납니다.
+      </figcaption>
+    </figure>
+
+    <div class="decision">
       <div class="decision__row">
         <span class="decision__label">노출 제어 분리</span>
         <div class="decision__body">
