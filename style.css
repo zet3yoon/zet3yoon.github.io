@@ -252,6 +252,29 @@ img { max-width: 100%; height: auto; }
 /* 다만 본문 서술은 넓어지면 읽기 어려우므로 원래 폭을 유지합니다. */
 .hero__body { max-width: 62ch; }
 
+/* 이름 — 포트폴리오에서 가장 먼저 읽혀야 하는 정보입니다.
+   기존에는 네비게이션과 푸터에만 있어 히어로에서 누락돼 있었습니다. */
+.hero__name {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0 16px;
+  margin-bottom: 20px;
+}
+
+.hero__who {
+  font-size: clamp(2rem, 1.3rem + 2.2vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+.hero__role {
+  font-size: var(--step-0);
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
 .hero__eyebrow {
   display: inline-block;
   font-size: var(--step--1);
