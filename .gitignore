@@ -26,4 +26,4 @@ _draft/
 .claude/
 
 # 원본 파일은 제외합니다. 웹에는 변환본(portrait.jpg)만 씁니다.
-assets/gritrail/*.png
+assets/gritrail/
