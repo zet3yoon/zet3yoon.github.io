@@ -49,6 +49,35 @@
   }
 
   /* -----------------------------------------------------------------
+     0-2. 네비게이션 이름 노출 제어
+     히어로에 이름이 크게 있는 동안에는 감추고, 지나가면 나타납니다.
+     히어로가 없는 페이지에서는 아무 것도 하지 않아 이름이 계속 보입니다.
+     ----------------------------------------------------------------- */
+
+  var navNameEl = document.querySelector('.nav__name');
+  var heroName = document.querySelector('.hero__name');
+  var navObserverFired = false;
+
+  if (navNameEl && heroName) {
+    // 히어로 이름이 보이는 동안에만 감춥니다.
+    navNameEl.classList.add('nav__name--hidden');
+
+    var navObserver = new IntersectionObserver(function (entries) {
+      navObserverFired = true;
+      entries.forEach(function (entry) {
+        navNameEl.classList.toggle('nav__name--hidden', entry.isIntersecting);
+      });
+    }, { rootMargin: '-60px 0px 0px 0px' });
+
+    navObserver.observe(heroName);
+
+    // 관찰자가 동작하지 않으면 이름이 영영 안 보입니다. 4초 뒤 무조건 되돌립니다.
+    setTimeout(function () {
+      if (!navObserverFired) navNameEl.classList.remove('nav__name--hidden');
+    }, 4000);
+  }
+
+  /* -----------------------------------------------------------------
      1. 등장 효과
      IntersectionObserver는 "이 요소가 화면에 들어왔는가"를 브라우저가
      알려주는 기능입니다. 스크롤 이벤트를 직접 듣는 것보다 훨씬 가볍습니다.
