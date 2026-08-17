@@ -655,10 +655,14 @@ img { max-width: 100%; height: auto; }
 
 .metrics {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 28px;
   padding: 0 0 32px;
   border-bottom: 1px solid var(--border);
+}
+
+@media (max-width: 900px) {
+  .metrics { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 620px) {
