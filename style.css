@@ -989,11 +989,11 @@ img { max-width: 100%; height: auto; }
   .rolegrid__row { grid-template-columns: 1fr; gap: 4px; }
 }
 
-/* 본문(.prose p)과 같은 크기로 둡니다. 라벨만 한 단계 작게. */
+/* 라벨과 값 모두 본문(.prose p)과 같은 크기.
+   구분은 색 대비로 냅니다 — 라벨은 --text, 값은 --text-muted. */
 .rolegrid__k {
-  font-size: var(--step--1);
   font-weight: 700;
-  color: var(--text-subtle);
+  color: var(--text);
   letter-spacing: 0.02em;
   line-height: 1.75;
 }
