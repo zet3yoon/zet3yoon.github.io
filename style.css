@@ -989,17 +989,18 @@ img { max-width: 100%; height: auto; }
   .rolegrid__row { grid-template-columns: 1fr; gap: 4px; }
 }
 
+/* 본문(.prose p)과 같은 크기로 둡니다. 라벨만 한 단계 작게. */
 .rolegrid__k {
-  font-size: 0.8125rem;
+  font-size: var(--step--1);
   font-weight: 700;
   color: var(--text-subtle);
   letter-spacing: 0.02em;
+  line-height: 1.75;
 }
 
 .rolegrid__v {
-  font-size: var(--step--1);
   color: var(--text-muted);
-  line-height: 1.7;
+  line-height: 1.75;
 }
 
 /* 결정 블록 — 제약, 선택지, 결정, 근거를 같은 형식으로 반복 */
