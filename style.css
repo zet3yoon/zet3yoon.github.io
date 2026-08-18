@@ -971,6 +971,37 @@ img { max-width: 100%; height: auto; }
   margin: 0 0 20px;
 }
 
+/* 맡은 범위 — 서술 대신 단어로 나열합니다.
+   메타 영역에 길게 쓰면 기간·협업과 균형이 깨져 본문으로 뺐습니다. */
+.rolegrid { margin: 4px 0 0; }
+
+.rolegrid__row {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 18px;
+  padding: 12px 0;
+  border-top: 1px solid var(--border);
+}
+
+.rolegrid__row:first-child { border-top: none; padding-top: 0; }
+
+@media (max-width: 620px) {
+  .rolegrid__row { grid-template-columns: 1fr; gap: 4px; }
+}
+
+.rolegrid__k {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--text-subtle);
+  letter-spacing: 0.02em;
+}
+
+.rolegrid__v {
+  font-size: var(--step--1);
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
 /* 결정 블록 — 제약, 선택지, 결정, 근거를 같은 형식으로 반복 */
 .decision {
   background: var(--bg-elevated);
