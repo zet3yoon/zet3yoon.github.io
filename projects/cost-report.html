@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>공사비 예측 리포트 자동화 구축 및 운영 · 오승윤</title>
+<meta name="description" content="수수료 기반 사업에서 진입 관문의 역할은 매출이 아니라 신뢰라고 보고, 유료였던 공사비 산정을 무료로 연 프로젝트.">
+<link rel="stylesheet" href="../style.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a class="nav__name" href="../index.html">오승윤</a>
+    <div class="nav__links">
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#system">시스템</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+<header class="proj-hero">
+  <div class="wrap">
+    <a class="proj-back" href="../index.html#projects">← 프로젝트 목록</a>
+    <p class="proj-hero__org">하우빌드</p>
+    <h1 class="proj-hero__title">공사비 예측 리포트 자동화 구축 및 운영</h1>
+    <p class="proj-hero__summary">
+      건축 시장의 정보 격차는 시장 특성이기도 했지만, 일부는 의도적으로 만들어진
+      것이었습니다. 수수료 기반 사업에서 진입 관문의 역할은 매출이 아니라 신뢰라고 보고,
+      유료였던 공사비 산정을 무료로 열었습니다.
+    </p>
+
+    <div class="proj-meta">
+      <div>
+        <span class="proj-meta__label">역할</span>
+        <span class="proj-meta__value">기획 · 운영 담당</span>
+      </div>
+      <div>
+        <span class="proj-meta__label">기간</span>
+        <span class="proj-meta__value">2020.08 – 2020.12</span>
+      </div>
+      <div>
+        <span class="proj-meta__label">협업</span>
+        <span class="proj-meta__value">개발 · 건축 전문가 · 사용자</span>
+      </div>
+    </div>
+
+    <div class="outcomes" data-reveal="stagger">
+      <div>
+        <span class="outcome__value">가설 검증</span>
+        <span class="outcome__label">무료 제공이 신뢰 형성에 작동한다는 것을 데이터로 확인</span>
+      </div>
+      <div>
+        <span class="outcome__value">지속 우상향</span>
+        <span class="outcome__label">사용자 인입 — 최고점 주당 약 30건</span>
+      </div>
+      <div>
+        <span class="outcome__value">다음 단계로</span>
+        <span class="outcome__label">검증 결과가 ‘스케치’ 자동화 시도의 근거가 됨</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="proj-section">
+  <div class="wrap">
+    <h2 class="proj-section__title">맡은 범위</h2>
+    <div class="rolegrid">
+      <div class="rolegrid__row">
+        <span class="rolegrid__k">정의</span>
+        <span class="rolegrid__v">공사비 산정 입력 항목 · 관련 법규 검토 기준</span>
+      </div>
+      <div class="rolegrid__row">
+        <span class="rolegrid__k">로직</span>
+        <span class="rolegrid__v">자동화 가능한 계산 단계 식별 · 자동화 로직 정리</span>
+      </div>
+      <div class="rolegrid__row">
+        <span class="rolegrid__k">구조</span>
+        <span class="rolegrid__v">유료에서 무료 제공 구조로 전환 기획</span>
+      </div>
+      <div class="rolegrid__row">
+        <span class="rolegrid__k">운영</span>
+        <span class="rolegrid__v">오픈 후 리포트 직접 작성 · 사용자 상담 · 피드백 반영</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="proj-section">
+  <div class="wrap">
+    <h2 class="proj-section__title">문제 — 만들어진 정보 격차</h2>
+    <div class="prose">
+      <p>
+        건축은 건축사·시공사·전기/설비 기술자 등 수많은 이해관계자가 얽혀 있고
+        각자가 전문 정보를 쥐고 있습니다. 일반 건축주가 전체를 파악하기 어려운 시장입니다.
+      </p>
+      <p>
+        이 격차는 시장 특성이기도 했지만, <strong>일부 플레이어가 의도적으로 만든
+        측면</strong>도 있었습니다. 정보를 모르는 쪽이 불리한 조건을 받아들이게 되는 구조입니다.
+      </p>
+      <p>
+        회사는 정보를 투명하게 공개하고 전문가가 옆에서 서포트하는
+        <strong>원스톱 솔루션</strong>을 지향했고, 수익은 <strong>솔루션 이용 수수료</strong>에서
+        나왔습니다. 공사비 리포트는 그 솔루션의 <strong>진입 관문</strong>으로 설계됐습니다.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="proj-section">
+  <div class="wrap">
+    <h2 class="proj-section__title">결정 ① 유료 영역을 무료로 열 것인가</h2>
+
+    <div class="decision">
+      <div class="decision__row">
+        <span class="decision__label">상황</span>
+        <div class="decision__body">
+          공사비 산정은 <strong>원래 돈을 받고 하는 일</strong>이었습니다. 사업 시작 단계에서
+          가장 큰 의사결정 변수라 값을 매길 수 있는 정보입니다.
+        </div>
+      </div>
+      <div class="decision__row decision__row--pick">
+        <span class="decision__label">결정</span>
+        <div class="decision__body">
+          <strong>무료로 열었습니다.</strong> 대신 품질을 낮추지 않았습니다.
+          신뢰도 높은 정보를 무료로 제공하면 사용자가 회사를 신뢰하고
+          <strong>본 솔루션 이용으로 이어진다</strong>는 가설이었습니다.
+        </div>
+      </div>
+      <div class="decision__row">
+        <span class="decision__label">근거</span>
+        <div class="decision__body">
+          수수료 기반 사업에서 진입 관문의 역할은 <strong>매출이 아니라 신뢰</strong>입니다.
+          리포트로 돈을 벌면 진입이 줄고, 진입이 줄면 수수료가 발생할 모수 자체가
+          작아집니다. <strong>앞에서 받는 돈이 뒤에서 잃는 돈보다 작은지</strong>를 본 것입니다.
+        </div>
+      </div>
+      <div class="decision__row">
+        <span class="decision__label">리스크</span>
+        <div class="decision__body">
+          무료라서 대충 만들면 역효과입니다. <strong>신뢰를 얻으려고 연 것이 신뢰를 깎는</strong>
+          결과가 됩니다. 그래서 자동화보다 정확도를 앞에 뒀습니다.
+        </div>
+      </div>
+    </div>
+
+    <figure class="diagram" data-reveal>
+      <svg viewBox="0 0 900 260" role="img" aria-labelledby="crTitle crDesc">
+        <title id="crTitle">무료 리포트에서 수수료 수익까지 이어지는 구조</title>
+        <desc id="crDesc">무료 공사비 리포트가 신뢰를 만들고, 신뢰가 솔루션 이용으로 이어져 수수료 수익이 발생합니다. 리포트 단계에서 과금하면 이 흐름의 입구가 좁아집니다.</desc>
+
+        <rect class="d-node d-node--accent" x="30" y="50" width="180" height="60" rx="8" fill="#e7edfd" stroke="#0c46da" stroke-width="1.5"/>
+        <text class="d-label" x="120" y="76" text-anchor="middle" fill="#0a1439" font-size="13" font-weight="600">무료 공사비 리포트</text>
+        <text class="d-sub"   x="120" y="94" text-anchor="middle" fill="#55608a" font-size="11">원래 유료 영역</text>
+
+        <path class="d-line d-line--accent" data-draw pathLength="1" d="M210 80 H255" fill="none" stroke="#0c46da" stroke-width="1.75" stroke-linecap="round"/>
+
+        <rect class="d-node d-node--accent" x="255" y="50" width="160" height="60" rx="8" fill="#e7edfd" stroke="#0c46da" stroke-width="1.5"/>
+        <text class="d-label" x="335" y="76" text-anchor="middle" fill="#0a1439" font-size="13" font-weight="600">신뢰 형성</text>
+        <text class="d-sub"   x="335" y="94" text-anchor="middle" fill="#55608a" font-size="11">정보 격차 해소</text>
+
+        <path class="d-line d-line--accent" data-draw pathLength="1" d="M415 80 H460" fill="none" stroke="#0c46da" stroke-width="1.75" stroke-linecap="round"/>
+
+        <rect class="d-node" x="460" y="50" width="180" height="60" rx="8" fill="#ffffff" stroke="#c3cae4" stroke-width="1.5"/>
+        <text class="d-label" x="550" y="76" text-anchor="middle" fill="#0a1439" font-size="13" font-weight="600">원스톱 솔루션 이용</text>
+        <text class="d-sub"   x="550" y="94" text-anchor="middle" fill="#55608a" font-size="11">전문가 서포트</text>
+
+        <path class="d-line" data-draw pathLength="1" d="M640 80 H685" fill="none" stroke="#c3cae4" stroke-width="1.75" stroke-linecap="round"/>
+
+        <rect class="d-node d-node--success" x="685" y="50" width="180" height="60" rx="8" fill="#e6f5e9" stroke="#1d6e31" stroke-width="1.5"/>
+        <text class="d-label" x="775" y="76" text-anchor="middle" fill="#0a1439" font-size="13" font-weight="600">수수료 수익</text>
+        <text class="d-sub"   x="775" y="94" text-anchor="middle" fill="#55608a" font-size="11">회사 핵심 BM</text>
+
+        <path class="d-line" data-draw pathLength="1" d="M120 110 V170 H775 V110" fill="none" stroke="#c3cae4" stroke-width="1.75" stroke-dasharray="6 5"/>
+        <text class="d-sub" x="450" y="163" text-anchor="middle" fill="#55608a" font-size="11">
+          입구에서 과금하면 이 흐름 전체의 모수가 줄어듭니다
+        </text>
+
+        <text class="d-sub" x="450" y="215" text-anchor="middle" fill="#55608a" font-size="11">
+          그래서 리포트의 성공 기준을 매출이 아니라 인입 추이로 잡았습니다
+        </text>
+      </svg>
+      <p class="diagram__caption">
+        파랑이 이 프로젝트가 담당한 구간, 초록이 회사 수익이 발생하는 지점입니다.
+        둘 사이의 거리가 이 결정의 근거였습니다.
+      </p>
+    </figure>
+  </div>
+</section>
+
+<section class="proj-section">
+  <div class="wrap">
+    <h2 class="proj-section__title">결정 ② 자동화하기 전에 직접 썼습니다</h2>
+    <div class="prose">
+      <p>
+        공사비 산정에 필요한 <strong>입력 항목</strong>(대지 정보, 건물 규모, 용도 등)을
+        정의하고, <strong>자동화 가능한 계산 단계</strong>를 식별했습니다. 공사비에 영향을 주는
+        관련 법규 검토 기준도 함께 정리했습니다.
+      </p>
+      <p>
+        그런데 전부 자동화하지 않았습니다. 건축 도메인 이해를 바탕으로
+        <strong>자동화 가능 영역과 전문가 판단 영역을 구분</strong>했고,
+        개발 이후에는 <strong>리포트를 직접 작성하며 운영</strong>했습니다.
+      </p>
+      <p>
+        직접 쓴 이유는 두 가지입니다. 첫째, 가설이 작동하는지 확인할 환경이 필요했습니다.
+        둘째, <strong>사용자가 정말로 알고 싶은 것과 리포트가 주는 것 사이의 간극</strong>은
+        직접 상담해 봐야 보입니다. 그렇게 모은 피드백을 개선 방향에 반영했습니다.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="proj-section">
+  <div class="wrap">
+    <h2 class="proj-section__title">성과와 배움</h2>
+    <div class="prose">
+      <p>
+        <strong>가설이 일정 부분 검증됐습니다.</strong> 사용자 인입이 지속적으로 우상향하며
+        <strong>최고점 주당 약 30건</strong>을 기록해, 신뢰도 높은 정보를 무료로 제공하는 것이
+        신뢰 형성에 작동한다는 점이 확인됐습니다.
+      </p>
+      <p>
+        이 검증 결과가 다음 단계인
+        <a href="sketch-regulation.html">‘스케치’</a>의 자동화 시도로 이어졌습니다.
+        일부 자동화로 리포트 작성 효율도 개선했습니다.
+      </p>
+    </div>
+
+    <div class="prose" style="margin-top:36px">
+      <p>
+        <strong>수익 지점과 진입 지점을 구분해야 합니다.</strong> 진입 관문에서 받는 돈은
+        뒤에서 잃는 모수보다 작은지 계산해야 합니다. 여기서는 작지 않다고 봤고,
+        그래서 무료로 열었습니다.
+      </p>
+      <p>
+        <strong>운영을 해봐야 간극이 보입니다.</strong> 정보를 잘 제공하는 것만으로는
+        부족했습니다. 사용자가 그 정보를 <strong>어떻게 받아들이고 활용하는지</strong>까지
+        같이 봐야 리포트를 고칠 방향이 나옵니다. 직접 쓰지 않았으면 몰랐을 것입니다.
+      </p>
+      <p>
+        <strong>검증이 다음 투자를 정당화합니다.</strong> 자동화라는 큰 시도를 하려면
+        근거가 필요했고, 그 근거를 만든 것이 이 프로젝트였습니다.
+      </p>
+    </div>
+
+    <p style="margin-top:32px">
+      <a class="btn" href="../index.html#projects">← 프로젝트 목록으로</a>
+    </p>
+  </div>
+</section>
+
+</main>
+
+<script src="../motion.js"></script>
+
+<footer class="footer">
+  <div class="wrap">© 2026 오승윤</div>
+</footer>
+
+</body>
+</html>
