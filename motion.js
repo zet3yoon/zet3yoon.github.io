@@ -5,7 +5,7 @@
    사용법
      <div data-reveal>            화면에 들어오면 나타남
      <div data-reveal="stagger">  자식 요소가 순서대로 나타남
-     <span data-count="140000" data-suffix="장">  0부터 세며 올라감
+     <span data-count="170000" data-suffix="명">  0부터 세며 올라감
 
    접근성
      운영체제에 '동작 줄이기'가 켜져 있으면 모든 애니메이션을 끄고
