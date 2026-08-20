@@ -58,12 +58,12 @@
         <span class="outcome__label">포인트 상속 건당 처리 시간</span>
       </div>
       <div>
-        <span class="outcome__value" data-count="4" data-suffix="곳">4곳</span>
-        <span class="outcome__label">계열사 포인트 연동 완료</span>
+        <span class="outcome__value">금감원 권고 반영</span>
+        <span class="outcome__label">소멸 사전 고지를 약관과 실제 통지 프로세스 양쪽에 적용</span>
       </div>
       <div>
-        <span class="outcome__value">셀프서비스</span>
-        <span class="outcome__label">연말정산 시즌 CS 인입 해소</span>
+        <span class="outcome__value">셀프서비스 전환</span>
+        <span class="outcome__label">연말정산 시즌마다 반복되던 소득공제 문의 해소</span>
       </div>
     </div>
   </div>
@@ -141,6 +141,40 @@
         </div>
       </div>
     </div>
+
+    <figure class="chart" data-reveal>
+      <figcaption>
+        <p class="chart__title">상속 처리 절차 비교</p>
+        <p class="chart__sub">같은 업무를 담당자가 나눠 하던 것과 화면 하나로 처리하는 것</p>
+      </figcaption>
+
+      <div class="flowcmp">
+        <div class="flowcmp__col">
+          <p class="flowcmp__name">기존 — 수기 처리</p>
+          <ol class="flowcmp__steps">
+            <li>상속 서류 확인 <span class="flowcmp__cost">수기</span></li>
+            <li>피상속인 포인트 차감 <span class="flowcmp__cost">수기</span></li>
+            <li>상속인 포인트 적립 <span class="flowcmp__cost">수기</span></li>
+            <li>처리 이력 기록 <span class="flowcmp__cost">수기</span></li>
+          </ol>
+          <p class="flowcmp__result">월 20~30건 · 담당자 리소스를 계속 소모</p>
+        </div>
+        <div class="flowcmp__col flowcmp__col--pick">
+          <p class="flowcmp__name">전환 후 — 전용 화면</p>
+          <ol class="flowcmp__steps">
+            <li>상속 서류 확인 <span class="flowcmp__cost">수기</span></li>
+            <li>차감과 적립 일괄 처리 <span class="flowcmp__free">화면에서</span></li>
+            <li>이력 자동 기록 <span class="flowcmp__free">자동</span></li>
+          </ol>
+          <p class="flowcmp__result">건당 처리 시간 1/3 이하</p>
+        </div>
+      </div>
+
+      <p class="chart__note">
+        서류 확인은 그대로 사람이 합니다. <strong>자동화한 것은 차감과 적립처럼
+        규칙이 정해진 구간</strong>이고, 판단이 필요한 구간은 남겼습니다.
+      </p>
+    </figure>
   </div>
 </section>
 
@@ -176,6 +210,38 @@
         </div>
       </div>
     </div>
+
+    <figure class="chart" data-reveal>
+      <figcaption>
+        <p class="chart__title">소득공제 문의 처리 경로</p>
+        <p class="chart__sub">응대를 개선하는 것과 인입 자체를 없애는 것의 차이</p>
+      </figcaption>
+
+      <div class="flowcmp">
+        <div class="flowcmp__col">
+          <p class="flowcmp__name">기존 — 고객센터 응대</p>
+          <ol class="flowcmp__steps">
+            <li>고객이 고객센터에 문의 <span class="flowcmp__cost">대기</span></li>
+            <li>상담사가 내역 확인 <span class="flowcmp__cost">인력</span></li>
+            <li>신고 양식 작성·전달 <span class="flowcmp__cost">인력</span></li>
+          </ol>
+          <p class="flowcmp__result">연말정산 시즌마다 월 20~30건이 반복 인입</p>
+        </div>
+        <div class="flowcmp__col flowcmp__col--pick">
+          <p class="flowcmp__name">전환 후 — 조회 화면</p>
+          <ol class="flowcmp__steps">
+            <li>고객이 직접 조회 <span class="flowcmp__free">즉시</span></li>
+            <li>신고 양식 내려받기 <span class="flowcmp__free">즉시</span></li>
+          </ol>
+          <p class="flowcmp__result">고객 대기 없음 · 시즌 인입 해소</p>
+        </div>
+      </div>
+
+      <p class="chart__note">
+        매뉴얼을 고치면 <strong>3단계가 빨라질 뿐 단계 수는 그대로</strong>입니다.
+        시즌마다 반복되는 인입은 응대 속도로 줄지 않습니다.
+      </p>
+    </figure>
   </div>
 </section>
 
@@ -209,6 +275,52 @@
         실질적인 일이었습니다. 각 사의 시스템과 정책이 달라 같은 용어도 다르게 쓰였기 때문입니다.
       </p>
     </div>
+
+    <figure class="diagram" data-reveal>
+      <svg viewBox="0 0 900 300" role="img" aria-labelledby="ppTitle ppDesc">
+        <title id="ppTitle">포인트 플랫폼과 계열사 4곳의 연동 구조</title>
+        <desc id="ppDesc">차세대 온라인몰, 리조트, 패션, 여행 네 계열사가 각각 다른 시스템과 정책을 가지고 있고, 포인트 플랫폼이 공통 정책과 연동 규격을 기준으로 이들을 연결합니다.</desc>
+
+        <rect class="d-node" x="20" y="24" width="180" height="48" rx="8" fill="#ffffff" stroke="#c3cae4" stroke-width="1.5"/>
+        <text class="d-label" x="110" y="46" text-anchor="middle" fill="#0a1439" font-size="13" font-weight="600">차세대 온라인몰</text>
+        <text class="d-sub"   x="110" y="63" text-anchor="middle" fill="#55608a" font-size="11">주문·결제 연계</text>
+
+        <rect class="d-node" x="20" y="88" width="180" height="48" rx="8" fill="#ffffff" stroke="#c3cae4" stroke-width="1.5"/>
+        <text class="d-label" x="110" y="110" text-anchor="middle" fill="#0a1439" font-size="13" font-weight="600">리조트</text>
+        <text class="d-sub"   x="110" y="127" text-anchor="middle" fill="#55608a" font-size="11">예약 단위 적립</text>
+
+        <rect class="d-node" x="20" y="152" width="180" height="48" rx="8" fill="#ffffff" stroke="#c3cae4" stroke-width="1.5"/>
+        <text class="d-label" x="110" y="174" text-anchor="middle" fill="#0a1439" font-size="13" font-weight="600">패션</text>
+        <text class="d-sub"   x="110" y="191" text-anchor="middle" fill="#55608a" font-size="11">매장·온라인 혼합</text>
+
+        <rect class="d-node" x="20" y="216" width="180" height="48" rx="8" fill="#ffffff" stroke="#c3cae4" stroke-width="1.5"/>
+        <text class="d-label" x="110" y="238" text-anchor="middle" fill="#0a1439" font-size="13" font-weight="600">여행</text>
+        <text class="d-sub"   x="110" y="255" text-anchor="middle" fill="#55608a" font-size="11">취소·환불 빈번</text>
+
+        <path class="d-line" data-draw pathLength="1" d="M200 48  H260 V144" fill="none" stroke="#c3cae4" stroke-width="1.75"/>
+        <path class="d-line" data-draw pathLength="1" d="M200 112 H260 V144" fill="none" stroke="#c3cae4" stroke-width="1.75"/>
+        <path class="d-line" data-draw pathLength="1" d="M200 176 H260 V144" fill="none" stroke="#c3cae4" stroke-width="1.75"/>
+        <path class="d-line" data-draw pathLength="1" d="M200 240 H260 V144" fill="none" stroke="#c3cae4" stroke-width="1.75"/>
+        <path class="d-line" data-draw pathLength="1" d="M260 144 H330" fill="none" stroke="#c3cae4" stroke-width="1.75"/>
+
+        <rect class="d-node d-node--accent" x="330" y="96" width="230" height="96" rx="8" fill="#e7edfd" stroke="#0c46da" stroke-width="1.5"/>
+        <text class="d-label" x="445" y="124" text-anchor="middle" fill="#0a1439" font-size="13" font-weight="600">연동 규격</text>
+        <text class="d-sub"   x="445" y="143" text-anchor="middle" fill="#55608a" font-size="11">데이터 송수신 기준 · 용어 정의</text>
+        <text class="d-sub"   x="445" y="159" text-anchor="middle" fill="#55608a" font-size="11">적립·취소 시점 · 예외 처리</text>
+        <text class="d-sub"   x="445" y="175" text-anchor="middle" fill="#55608a" font-size="11">정책 영향 검토 범위</text>
+
+        <path class="d-line d-line--accent" data-draw pathLength="1" d="M560 144 H630" fill="none" stroke="#0c46da" stroke-width="1.75"/>
+
+        <rect class="d-node d-node--success" x="630" y="96" width="250" height="96" rx="8" fill="#e6f5e9" stroke="#1d6e31" stroke-width="1.5"/>
+        <text class="d-label" x="755" y="128" text-anchor="middle" fill="#0a1439" font-size="13" font-weight="600">포인트 플랫폼</text>
+        <text class="d-sub"   x="755" y="147" text-anchor="middle" fill="#55608a" font-size="11">그룹 공통 적립·사용 정책</text>
+        <text class="d-sub"   x="755" y="163" text-anchor="middle" fill="#55608a" font-size="11">선불전자지급수단 규제 대상</text>
+      </svg>
+      <p class="diagram__caption">
+        계열사마다 거래 단위와 취소 빈도가 다릅니다. 연동의 실질은 개발이 아니라
+        <strong>같은 용어를 같은 뜻으로 쓰게 만드는 합의</strong>였습니다.
+      </p>
+    </figure>
   </div>
 </section>
 
